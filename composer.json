@@ -1,0 +1,18 @@
+{
+    "name": "Aperture2Global",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/theus77/apertureconnector"
+        }
+    ],
+    "require": {
+        "cakephp/cakephp": "2.6.*",
+        "cakephp/debug_kit": "2.2.*",
+        "theus77/aperture_connector": "1.*",
+        "elasticsearch/elasticsearch": "~1.0"
+    },
+    "config": {
+        "vendor-dir": "Vendor/"
+    }
+}
