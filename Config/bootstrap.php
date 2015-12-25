@@ -42,6 +42,16 @@ Cache::config('default', array('engine' => 'File'));
  *
  */
 
+
+// Charger l'autoload de Composer.
+require APP . 'Vendor/autoload.php';
+
+// Retire et réajoute l'autoloader de CakePHP puisque C§omposer pense que
+// c'est le plus important.
+// See http://goo.gl/kKVJO7
+spl_autoload_unregister(array('App', 'load'));
+spl_autoload_register(array('App', 'load'), true, true);
+
 /**
  * Custom Inflector rules can be set to correctly pluralize or singularize table, model, controller names or whatever other
  * string is passed to the inflection functions
@@ -96,3 +106,12 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+
+CakePlugin::load('ApertureConnector', array('bootstrap' => false, 'routes' => true));
+
+Configure::write('awsESHosts', ['https://search-globalview-64tdo3cxwpdh5vwkwlerhgac2e.us-west-2.es.amazonaws.com:443/']);
+
+Configure::write('languages', ['fr','nl','en']);
+
+

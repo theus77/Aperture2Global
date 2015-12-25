@@ -5,3 +5,7 @@ CakePHP 2
 /.settings/
 /.buildpath
 /.project
+/Database/
+.DS_Store
+/Thumbnails/
+/Previews/
