@@ -1,0 +1,1596 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: globalview\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mathieu DE Keyzer <mathieu@dekeyzer.net>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: 10697
+msgid "ENTREPRISES & ECONOMIE"
+msgstr "BUSINESS & ECONOMY"
+
+#: 10750
+msgid "TRANSPORTS & COMMUNICATIONS"
+msgstr "TRANSPORT & COMMUNICATIONS"
+
+#: 10819
+msgid "PAYSAGES & ENVIRONNEMENT"
+msgstr "SCENERY & ENVIRONMENT"
+
+#: 10854
+msgid "TOURISME & LOISIRS"
+msgstr "TOURISM & LEISURE"
+
+#: 10901
+msgid "ARCHITECTURE & URBANISME"
+msgstr "ARCHITECTURE & URBAN PLANNING"
+
+#: 10940
+msgid "MONUMENTS & SITES HISTORIQUES"
+msgstr "MONUMENTS & HISTORIC SITES"
+
+#: 10973
+msgid "GRAPHISME"
+msgstr "Graphic design"
+
+#: 11006
+msgid "COLLECTIONS"
+msgstr "COLLECTIONS"
+
+#: 10713
+msgid "Entreprise & économie"
+msgstr "Business & economy"
+
+#: 10721
+msgid "Chantier"
+msgstr "Site"
+
+#: 10728
+msgid "Agriculture"
+msgstr "Agriculture"
+
+#: 11074
+msgid "Activités commerciales"
+msgstr "Commercial activities"
+
+#: 11080
+msgid "Secteurs"
+msgstr "Sectors"
+
+#: 10751
+msgid "Ouvrage d'art"
+msgstr "Work of art"
+
+#: 10752
+msgid "Télécommunications"
+msgstr "Telecommunication"
+
+#: 10773
+msgid "Transport aérien"
+msgstr "Air Transport"
+
+#: 10779
+msgid "Transport férroviaire"
+msgstr "Rail transport"
+
+#: 10785
+msgid "Transport maritime"
+msgstr "Ship transport"
+
+#: 10804
+msgid "Transport routier"
+msgstr "Road transport"
+
+#: 10813
+msgid "Pont à gibier"
+msgstr "Bridge game"
+
+#: 10814
+msgid "Véhicule"
+msgstr "Vehicle"
+
+#: 10818
+msgid "Embouteillage"
+msgstr "Traffic jam"
+
+#: 10820
+msgid "Paysage & Relief"
+msgstr "Landscape & Terrein"
+
+#: 10826
+msgid "Environnement/Ecologie"
+msgstr "Environment/Ecology"
+
+#: 10842
+msgid "Eau"
+msgstr "Water"
+
+#: 10855
+msgid "Equipement culturel"
+msgstr "Cultural equipment"
+
+#: 10865
+msgid "Installation de loisir"
+msgstr "Leisure facility"
+
+#: 10880
+msgid "Equipement sportif"
+msgstr "Sports equipment"
+
+#: 10891
+msgid "Sport"
+msgstr "Sport"
+
+#: 10902
+msgid "Bâtiment & Lieu public"
+msgstr "Building & Public place"
+
+#: 10911
+msgid "Villes & Vilages"
+msgstr "Cities & Villages"
+
+#: 10930
+msgid "Habitat"
+msgstr "Habitat"
+
+#: 10942
+msgid "Patrimoine bâti"
+msgstr "Heritage buildings"
+
+#: 10963
+msgid "Monument"
+msgstr "Monument"
+
+#: 10974
+msgid "Forme"
+msgstr "Shape"
+
+#: 10984
+msgid "Saison"
+msgstr "Season"
+
+#: 10989
+msgid "Couleur"
+msgstr "Color"
+
+#: 10999
+msgid "Insolite"
+msgstr "Unusual"
+
+#: 11000
+msgid "Géoglyphe"
+msgstr "Geoglyph"
+
+#: 11001
+msgid "Mosaïque"
+msgstr "Mosaic"
+
+#: 14122
+msgid "Pattern"
+msgstr "Pattern"
+
+#: 11007
+msgid "Reportage multi-angles"
+msgstr "Reportage multi-angle"
+
+#: 11034
+msgid "Best-Of"
+msgstr "Best-Of"
+
+#: 11041
+msgid "Châteaux"
+msgstr "Castles"
+
+#: 10704
+msgid "Industrie"
+msgstr "Industry"
+
+#: 10709
+msgid "Carrière/Sablière"
+msgstr "Career/Sandbox"
+
+#: 10714
+msgid "Parc d'activité économique"
+msgstr "Economic activity park"
+
+#: 10715
+msgid "Technopole"
+msgstr "Technopole"
+
+#: 10716
+msgid "Entreprise"
+msgstr "Company"
+
+#: 10718
+msgid "Entrepôt/Hangar"
+msgstr "Warehouse/Shed"
+
+#: 11010
+msgid "Immeuble de bureaux"
+msgstr "Office building"
+
+#: 11026
+msgid "Bassin de décantation"
+msgstr "Sedimentation basin"
+
+#: 11028
+msgid "Station service"
+msgstr "Service station"
+
+#: 11056
+msgid "Centre de Recherche/Laboratoire"
+msgstr "Centre of research/Laboratory"
+
+#: 11057
+msgid "Communication"
+msgstr "Communication"
+
+#: 11064
+msgid "Centre de formation"
+msgstr "Training Center"
+
+#: 10723
+msgid "Chantier naval"
+msgstr "Shipyard"
+
+#: 10725
+msgid "Friche industrielle/Site désafecté"
+msgstr "Brownfield/Site desafecte"
+
+#: 10726
+msgid "Site reconverti"
+msgstr "Converted site"
+
+#: 11067
+msgid "Terrain à batir"
+msgstr "Building lot"
+
+#: 10729
+msgid "Exploitation agricole"
+msgstr "Agricultural holding"
+
+#: 10730
+msgid "Culture"
+msgstr "Culture"
+
+#: 10737
+msgid "Elevage"
+msgstr "Livestock"
+
+#: 10738
+msgid "Travaux agricoles"
+msgstr "Agricultural work"
+
+#: 10746
+msgid "Véhicule agricole"
+msgstr "Agricultural vehicle"
+
+#: 11013
+msgid "Ferme"
+msgstr "Farm"
+
+#: 11014
+msgid "Moulin"
+msgstr "Mill (grinding)"
+
+#: 10753
+msgid "Aqueduc"
+msgstr "Aqueduct"
+
+#: 10754
+msgid "Ascensceur à bateaux"
+msgstr "Elevator for boats"
+
+#: 10755
+msgid "Digue"
+msgstr "Dike"
+
+#: 10756
+msgid "Passerelle"
+msgstr "Gateway"
+
+#: 10757
+msgid "Pont"
+msgstr "Bridge"
+
+#: 10758
+msgid "Viaduc"
+msgstr "Viaduct"
+
+#: 10763
+msgid "Ecluse"
+msgstr "Lock"
+
+#: 10764
+msgid "Tunnel"
+msgstr "Tunnel"
+
+#: 11039
+msgid "Barrage"
+msgstr "Dam"
+
+#: 10765
+msgid "Antenne"
+msgstr "Antenna"
+
+#: 10767
+msgid "Ligne électrique"
+msgstr "Overhead power line"
+
+#: 10768
+msgid "Observatoire"
+msgstr "Monitoring centre"
+
+#: 10769
+msgid "Parabole"
+msgstr "Parabola"
+
+#: 10770
+msgid "Pylône"
+msgstr "Pylon"
+
+#: 10771
+msgid "Radar"
+msgstr "Radar"
+
+#: 10772
+msgid "Tour hertzienne"
+msgstr "Radio tower"
+
+#: 10774
+msgid "Aéroport/Aérodrome"
+msgstr "Airport/Aerodrome"
+
+#: 10775
+msgid "Avion"
+msgstr "Airplane"
+
+#: 10776
+msgid "Hélicoptère"
+msgstr "Helicopter"
+
+#: 10777
+msgid "Montgolfière/Ballon"
+msgstr "Hot air balloon"
+
+#: 10778
+msgid "ULM/Deltaplane"
+msgstr "ULM/Hang-gliding"
+
+#: 10780
+msgid "Gare de triage/Gare de formation"
+msgstr "Station yard/Train formation"
+
+#: 10781
+msgid "Gare"
+msgstr "Train Station"
+
+#: 10782
+msgid "Gare de marchandises"
+msgstr "Goods station"
+
+#: 10783
+msgid "Train/TGV"
+msgstr "Train/TGV"
+
+#: 10784
+msgid "Voie ferrée"
+msgstr "Railway"
+
+#: 11032
+msgid "Quai"
+msgstr "Quayside"
+
+#: 11035
+msgid "Métro/Tramway"
+msgstr "Metro/Tram"
+
+#: 14118
+msgid "Ateliers"
+msgstr "Workshops"
+
+#: 10789
+msgid "Balise/Bouée"
+msgstr "Tag/Buoy"
+
+#: 10790
+msgid "Phare"
+msgstr "Lighthouse"
+
+#: 10793
+msgid "Navire"
+msgstr "Vessel"
+
+#: 10794
+msgid "Port"
+msgstr "Port"
+
+#: 11011
+msgid "Quai/Digue"
+msgstr "Dock/Seawall"
+
+#: 10805
+msgid "Autoroute"
+msgstr "Highway"
+
+#: 10806
+msgid "Route"
+msgstr "Road"
+
+#: 10807
+msgid "Chemin/Sentier"
+msgstr "Path/Trail"
+
+#: 10808
+msgid "Carrefour/Echangeur"
+msgstr "Crossroads/Exchanger"
+
+#: 10811
+msgid "Rond-point"
+msgstr "Traffic circle"
+
+#: 10812
+msgid "Parking"
+msgstr "Parking"
+
+#: 11023
+msgid "Gare routière"
+msgstr "Bus station"
+
+#: 10815
+msgid "Voiture"
+msgstr "Car"
+
+#: 10816
+msgid "Camion"
+msgstr "Truck"
+
+#: 10817
+msgid "Autobus/Car"
+msgstr "Bus/Car"
+
+#: 10821
+msgid "Colline/Coteau"
+msgstr "Hill/hillside"
+
+#: 10822
+msgid "Mont/Montagne"
+msgstr "Mount/Mountain"
+
+#: 10823
+msgid "Falaise/Rocher"
+msgstr "Cliff/Rock"
+
+#: 10824
+msgid "Sommet/Col"
+msgstr "Summit/Col"
+
+#: 10825
+msgid "Plaine/Vallon"
+msgstr "Plain/Vallon"
+
+#: 11002
+msgid "Forêt/Bois/Arbres"
+msgstr "Forest/Wood/Trees"
+
+#: 10827
+msgid "Catastrophe"
+msgstr "Disaster"
+
+#: 10832
+msgid "Réserve/Parc naturel"
+msgstr "Natural reserve/Park"
+
+#: 10834
+msgid "Faune"
+msgstr "Wildlife"
+
+#: 10841
+msgid "Traitement des déchets"
+msgstr "Waste treatment"
+
+#: 11017
+msgid "Paysage de campagne"
+msgstr "Countryside"
+
+#: 11018
+msgid "Paysage industriel"
+msgstr "industrial landscape"
+
+#: 11019
+msgid "Paysage urbain"
+msgstr "Cityscape"
+
+#: 11061
+msgid "Batex"
+msgstr "Batex"
+
+#: 10843
+msgid "Cote/Littoral"
+msgstr "Coast/Shoreline"
+
+#: 10844
+msgid "Fleuve/Rivière"
+msgstr "River"
+
+#: 10845
+msgid "Confluent"
+msgstr "Confluent"
+
+#: 10846
+msgid "Chenal"
+msgstr "Channel"
+
+#: 10847
+msgid "Embouchure/Delta"
+msgstr "Mouth/Delta"
+
+#: 10848
+msgid "Canal"
+msgstr "Canal"
+
+#: 10849
+msgid "Méandre"
+msgstr "Meander"
+
+#: 10850
+msgid "Lac/Etang/Bassin"
+msgstr "Lake/Pond/Pool"
+
+#: 10851
+msgid "Cascade/Chute d'eau"
+msgstr "Cascade/Waterfall"
+
+#: 10852
+msgid "Île/Îlot/Presqu'île"
+msgstr "Island/Almost-Island"
+
+#: 10853
+msgid "jet d'eau/Fontaine"
+msgstr "Jet of water/Fountain"
+
+#: 11046
+msgid "Château d'eau"
+msgstr "Water tower"
+
+#: 14117
+msgid "Darse"
+msgstr "Dock"
+
+#: 14120
+msgid "Plage"
+msgstr "Beach"
+
+#: 10856
+msgid "Site touristique"
+msgstr "Tourist site"
+
+#: 10857
+msgid "Parc d'exposition"
+msgstr "Exhibition park"
+
+#: 10858
+msgid "Palais des congrès/Centre de conférence"
+msgstr "Palace of Congress/Conference center"
+
+#: 10859
+msgid "Musée"
+msgstr "Museum"
+
+#: 10860
+msgid "Lieu d'exposition"
+msgstr "Venue of the exhibition"
+
+#: 10861
+msgid "Salle de spectacle"
+msgstr "Theatre room"
+
+#: 11050
+msgid "Centre culturel"
+msgstr "Cultural center"
+
+#: 10866
+msgid "Domaine provincial"
+msgstr "Provincial domain"
+
+#: 10867
+msgid "Parc d'attractions"
+msgstr "Amusement park"
+
+#: 10868
+msgid "Complexe hôtelier"
+msgstr "Hotel complex"
+
+#: 10869
+msgid "Village de vacances"
+msgstr "Holiday village"
+
+#: 10870
+msgid "Thermes"
+msgstr "Thermes"
+
+#: 10871
+msgid "Zoo/Parc animalier"
+msgstr "Zoo/Wildlife Park"
+
+#: 10872
+msgid "Hôtel/Restaurant"
+msgstr "Hotel/Restaurant"
+
+#: 10873
+msgid "Salle de réception"
+msgstr "Reception room"
+
+#: 10874
+msgid "Labyrinthe (Installation de loisir)"
+msgstr "Labyrinth (Installation of leisure)"
+
+#: 10875
+msgid "Cirque/fête foraine"
+msgstr "Circus/Funfair"
+
+#: 10876
+msgid "Casino"
+msgstr "Casino"
+
+#: 10877
+msgid "Camping"
+msgstr "Camping"
+
+#: 10878
+msgid "Autre (Installation de loisir)"
+msgstr "Other (Installation of leisure)"
+
+#: 10879
+msgid "Complexe touristique"
+msgstr "Tourist complex"
+
+#: 11045
+msgid "Gite"
+msgstr "Gite"
+
+#: 10881
+msgid "Stade"
+msgstr "Stadium"
+
+#: 10882
+msgid "Circuit automobile"
+msgstr "Race track"
+
+#: 10883
+msgid "Court de tennis"
+msgstr "Tennis court"
+
+#: 10884
+msgid "Terrain de Golf"
+msgstr "Golf course"
+
+#: 10885
+msgid "Hippodrome"
+msgstr "Hippodrome"
+
+#: 10886
+msgid "Centre équestre"
+msgstr "Horseback riding"
+
+#: 10887
+msgid "Base nautique"
+msgstr "Nautical base"
+
+#: 10888
+msgid "Complexe sportif"
+msgstr "Sports complex"
+
+#: 10889
+msgid "Piscine"
+msgstr "Swimming pool"
+
+#: 10890
+msgid "Aquadrome"
+msgstr "Aquadrome"
+
+#: 11024
+msgid "Piste cyclable"
+msgstr "Cycle path"
+
+#: 11055
+msgid "Autre (Equipement sportif)"
+msgstr "Other (sports equipment)"
+
+#: 11070
+msgid "Salle de fitness"
+msgstr "Fitness room"
+
+#: 11091
+msgid "Salle omnisports"
+msgstr "Indoor arena"
+
+#: 10892
+msgid "Sport nautique"
+msgstr "Nautical sports"
+
+#: 10893
+msgid "Sport mécanique"
+msgstr "Motorsport"
+
+#: 10894
+msgid "Sport d'hiver"
+msgstr "Winter sport"
+
+#: 10895
+msgid "Tennis"
+msgstr "Tennis"
+
+#: 10896
+msgid "Escalade"
+msgstr "Rock climbing"
+
+#: 10897
+msgid "Peche"
+msgstr "Fishing"
+
+#: 10898
+msgid "Chasse"
+msgstr "Hunting"
+
+#: 10899
+msgid "Détente"
+msgstr "Relaxation"
+
+#: 10900
+msgid "Sport d'équipe"
+msgstr "Team sport"
+
+#: 11037
+msgid "Golf"
+msgstr "Golf"
+
+#: 11043
+msgid "Spéléologie"
+msgstr "Caving"
+
+#: 11052
+msgid "Football"
+msgstr "Football/Soccer"
+
+#: 11054
+msgid "Parachutisme"
+msgstr "Skydive"
+
+#: 11060
+msgid "Athlétisme"
+msgstr "Athletics"
+
+#: 11072
+msgid "Voile"
+msgstr "Sailing"
+
+#: 11084
+msgid "Autre (Sport)"
+msgstr "Other (Sport)"
+
+#: 14121
+msgid "Activité balnéaire"
+msgstr "Resort activity"
+
+#: 10903
+msgid "Bâtiment administratif"
+msgstr "Administrative building"
+
+#: 10904
+msgid "Ecole/Collège/Pensionnat"
+msgstr "School/College/Boarding school"
+
+#: 10905
+msgid "Prison/Maison d'arrêt/Centre d'accueil"
+msgstr "Prison/Detention House/Home Center"
+
+#: 10906
+msgid "Université/Ecole/Institut"
+msgstr "University/School/Institute"
+
+#: 10907
+msgid "Domaine/Bâtiment militaire"
+msgstr "Military Domain/Building"
+
+#: 10908
+msgid "Espace vert/parc & jardin"
+msgstr "Space Green/Park & Garden"
+
+#: 10909
+msgid "Cimetière"
+msgstr "Cemetery"
+
+#: 10910
+msgid "Crématorium"
+msgstr "Crematory"
+
+#: 11022
+msgid "Hôpital/Clinique/Centre de Santé"
+msgstr "Hospital/Clinic/Health Centre"
+
+#: 14123
+msgid "Domaine Royal"
+msgstr "Royal domain"
+
+#: 10912
+msgid "Vue générale"
+msgstr "Overview"
+
+#: 10913
+msgid "Centre"
+msgstr "Centre"
+
+#: 10915
+msgid "Centre d'affaires"
+msgstr "Business center"
+
+#: 10916
+msgid "Place  esplanade  square"
+msgstr "Place/Plaza/Square"
+
+#: 10917
+msgid "Avenue"
+msgstr "Avenue"
+
+#: 10918
+msgid "Rue"
+msgstr "Street"
+
+#: 10919
+msgid "Quartier ancien"
+msgstr "Former district"
+
+#: 10920
+msgid "Quartier moderne"
+msgstr "Modern district"
+
+#: 10921
+msgid "Quartier commerçant"
+msgstr "Shopping district"
+
+#: 10922
+msgid "Ville"
+msgstr "City"
+
+#: 10923
+msgid "Hameau/Lieu-dit"
+msgstr "Hamlet/Locality"
+
+#: 10924
+msgid "Les plus beaux villages de Wallonie"
+msgstr "The most beautiful villages in Wallonia"
+
+#: 10925
+msgid "Zone d'intérêt stratégique"
+msgstr "Area of strategic interest"
+
+#: 10926
+msgid "Bâtiment de prestige"
+msgstr "Prestige building"
+
+#: 10927
+msgid "Marché"
+msgstr "Market"
+
+#: 10928
+msgid "Toit"
+msgstr "Roof"
+
+#: 10929
+msgid "Terrasse"
+msgstr "Terrace"
+
+#: 11038
+msgid "Village"
+msgstr "Village/Town"
+
+#: 10931
+msgid "Habitat collectif"
+msgstr "Multi-family residential"
+
+#: 10932
+msgid "Habitat individuel"
+msgstr "Individual housing"
+
+#: 10933
+msgid "Immeuble/building"
+msgstr "Building"
+
+#: 10934
+msgid "Habitat urbain"
+msgstr "Urban habitat"
+
+#: 10935
+msgid "Gratte-ciel"
+msgstr "Skyscraper"
+
+#: 10936
+msgid "Quartier résidentiel"
+msgstr "Residential neighbourhood"
+
+#: 10937
+msgid "Lotissement/Cité"
+msgstr "Subdivision/city"
+
+#: 10938
+msgid "Habitat isolé"
+msgstr "Urban habitat"
+
+#: 10939
+msgid "Maison/Villa"
+msgstr "House/Villa"
+
+#: 11025
+msgid "Seigneurie/Maison de repos"
+msgstr "Rest house/Lordship"
+
+#: 11030
+msgid "Cité"
+msgstr "City-state"
+
+#: 10943
+msgid "Monument classé"
+msgstr "Protected monument"
+
+#: 10944
+msgid "Château"
+msgstr "Castle"
+
+#: 10945
+msgid "Blockhaus"
+msgstr "Bunker"
+
+#: 10946
+msgid "Rempart"
+msgstr "Rampart"
+
+#: 10947
+msgid "Edifice religieux"
+msgstr "Religious building"
+
+#: 10961
+msgid "Jardin"
+msgstr "Garden"
+
+#: 10962
+msgid "Parterre"
+msgstr "Parterre"
+
+#: 11003
+msgid "Fort"
+msgstr "Fort"
+
+#: 11004
+msgid "Citadelle"
+msgstr "Citadel"
+
+#: 11005
+msgid "Douve"
+msgstr "Stave"
+
+#: 11008
+msgid "Palais"
+msgstr "Palace"
+
+#: 11009
+msgid "Patrimoine Mondial de l'UNESCO"
+msgstr "The UNESCO World Heritage"
+
+#: 11088
+msgid "Commanderie"
+msgstr "Commandry"
+
+#: 10964
+msgid "Mausolée  nécropole"
+msgstr "Mausoleum necropolis"
+
+#: 10965
+msgid "Mémorial /Monument aux morts"
+msgstr "Memorial/Monument to the dead"
+
+#: 10966
+msgid "Monument historique"
+msgstr "Historical Monument"
+
+#: 10967
+msgid "Ruine"
+msgstr "Ruins"
+
+#: 10968
+msgid "Site archéologique"
+msgstr "Archaeological site"
+
+#: 10969
+msgid "Site antique"
+msgstr "Ancient site"
+
+#: 10970
+msgid "Site Romain"
+msgstr "Roman"
+
+#: 10971
+msgid "Statue /sculpture"
+msgstr "Statue/Sculpture"
+
+#: 10972
+msgid "Tour"
+msgstr "Tower"
+
+#: 11042
+msgid "Histoire contemporaine"
+msgstr "Contemporary history"
+
+#: 11063
+msgid "Pavillon"
+msgstr "Pavilion"
+
+#: 10975
+msgid "Carré"
+msgstr "Square"
+
+#: 10976
+msgid "Coeur"
+msgstr "Heart"
+
+#: 10977
+msgid "Croix"
+msgstr "Cross"
+
+#: 10978
+msgid "Labyrinthe (Forme)"
+msgstr "Labyrinth (form)"
+
+#: 10979
+msgid "Ligne"
+msgstr "Row"
+
+#: 10980
+msgid "Rectangle"
+msgstr "Rectangle"
+
+#: 10981
+msgid "Rond/cercle"
+msgstr "Round/Circle"
+
+#: 10982
+msgid "Triangle"
+msgstr "Triangle"
+
+#: 10983
+msgid "Zig-Zag/lacet"
+msgstr "Zig-Zag/Lace"
+
+#: 11029
+msgid "Pentagone"
+msgstr "Pentagon"
+
+#: 11047
+msgid "Etoile"
+msgstr "Star"
+
+#: 11076
+msgid "Courbe"
+msgstr "Curve"
+
+#: 10985
+msgid "Automne"
+msgstr "Fall"
+
+#: 10986
+msgid "Eté"
+msgstr "Summer"
+
+#: 10987
+msgid "Hiver"
+msgstr "Winter"
+
+#: 10988
+msgid "Printemps"
+msgstr "Spring"
+
+#: 10990
+msgid "Blanc"
+msgstr "White"
+
+#: 10991
+msgid "Bleu"
+msgstr "Blue"
+
+#: 10992
+msgid "Jaune"
+msgstr "Yellow"
+
+#: 10993
+msgid "Multicolore"
+msgstr "Multi colored"
+
+#: 10994
+msgid "Noir"
+msgstr "Black"
+
+#: 10995
+msgid "Orange"
+msgstr "Orange"
+
+#: 10996
+msgid "Rouge"
+msgstr "Red"
+
+#: 10997
+msgid "Vert"
+msgstr "Green"
+
+#: 10998
+msgid "Violet"
+msgstr "Purple"
+
+#: 10719
+msgid "Centre commercial"
+msgstr "Shopping center"
+
+#: 10720
+msgid "Magasin"
+msgstr "Store"
+
+#: 11075
+msgid "Foire"
+msgstr "Fair"
+
+#: 10698
+msgid "Energie"
+msgstr "Energy"
+
+#: 11020
+msgid "Agroalimentaire"
+msgstr "Food Industry"
+
+#: 11049
+msgid "Filière Bois"
+msgstr "Wood economy"
+
+#: 11059
+msgid "Bâtiment et travaux publics"
+msgstr "Building and Public works"
+
+#: 11065
+msgid "Transport/Logistique"
+msgstr "Transport/Logistics"
+
+#: 11068
+msgid "Aéronautique"
+msgstr "Aeronautics"
+
+#: 11079
+msgid "Pharmacie/Paramédical"
+msgstr "Pharmacy/Paramedical"
+
+#: 11081
+msgid "Automobile"
+msgstr "Automotive"
+
+#: 11087
+msgid "Construction mécanique"
+msgstr "Mechanical engineering"
+
+#: 14116
+msgid "Textile"
+msgstr "Textiles"
+
+#: 14119
+msgid "Entreprise de service"
+msgstr "Service company"
+
+#: 10699
+msgid "Centrale hydro-électrique"
+msgstr "Hydroelectric power"
+
+#: 10700
+msgid "Centrale nucléaire"
+msgstr "Nuclear power plant"
+
+#: 10701
+msgid "Centrale thermique"
+msgstr "Thermal power station"
+
+#: 10702
+msgid "Energie éolienne"
+msgstr "Wind power"
+
+#: 10703
+msgid "Energie solaire"
+msgstr "Solar energy"
+
+#: 10706
+msgid "Hydrocarbure"
+msgstr "Hydrocarbon"
+
+#: 10707
+msgid "Métallurgie"
+msgstr "Metallurgy"
+
+#: 10708
+msgid "Chimie"
+msgstr "Chemistry"
+
+#: 10710
+msgid "Mine"
+msgstr "Mine"
+
+#: 10711
+msgid "Terril"
+msgstr "Spoil tip"
+
+#: 10712
+msgid "Autre (Industrie)"
+msgstr "Other (industry)"
+
+#: 10717
+msgid "Usine"
+msgstr "Factory"
+
+#: 10722
+msgid "Chantier de bâtiment"
+msgstr "Construction of building"
+
+#: 10724
+msgid "Chantier d'infrastructure"
+msgstr "Construction of infrastructure"
+
+#: 10731
+msgid "Horticulture"
+msgstr "Horticulture"
+
+#: 10732
+msgid "Culture sous serres"
+msgstr "Culture in greenhouses"
+
+#: 10733
+msgid "Pépinière"
+msgstr "Plant nursery"
+
+#: 10734
+msgid "Verger/Arbre fruitier"
+msgstr "Orchard/Fruit tree"
+
+#: 10735
+msgid "Sylviculture"
+msgstr "Forestry"
+
+#: 10736
+msgid "Culture en plein champ"
+msgstr "Culture in the field"
+
+#: 10739
+msgid "Moisson"
+msgstr "Harvest"
+
+#: 10740
+msgid "Labour"
+msgstr "Ploughing"
+
+#: 10741
+msgid "Récolte"
+msgstr "Harvest"
+
+#: 10742
+msgid "Prairie/Pâturage"
+msgstr "Meadow/Pasture"
+
+#: 10744
+msgid "Viticulture"
+msgstr "Viticulture"
+
+#: 10745
+msgid "Vendange"
+msgstr "Wine harvest"
+
+#: 10747
+msgid "Tracteur"
+msgstr "Tractor"
+
+#: 10749
+msgid "Moissonneuse"
+msgstr "Harvester"
+
+#: 10786
+msgid "Port de commerce"
+msgstr "Commercial port"
+
+#: 10787
+msgid "Port de pêche"
+msgstr "Fishing port"
+
+#: 10788
+msgid "Port de plaisance"
+msgstr "Marinas"
+
+#: 10791
+msgid "Barge/Péniche"
+msgstr "Barge"
+
+#: 10792
+msgid "Bateau de commerce"
+msgstr "Trade boat"
+
+#: 10795
+msgid "Bateau de pêche"
+msgstr "Fishing vessel"
+
+#: 10796
+msgid "Bateau de plaisance"
+msgstr "Pleasure boat"
+
+#: 10797
+msgid "Ferry"
+msgstr "Ferry boat"
+
+#: 10798
+msgid "Paquebot"
+msgstr "Ocean liner"
+
+#: 10799
+msgid "Epave"
+msgstr "Shipwreck"
+
+#: 10800
+msgid "Pétrolier"
+msgstr "Oil tanker"
+
+#: 10801
+msgid "Voilier"
+msgstr "Sailing ship"
+
+#: 10802
+msgid "Port industriel"
+msgstr "Industrial port"
+
+#: 10803
+msgid "Navire de guerre"
+msgstr "Warship"
+
+#: 10809
+msgid "Route sineuse"
+msgstr "Sinus road"
+
+#: 10810
+msgid "Virage"
+msgstr "Steering"
+
+#: 10828
+msgid "Déforestation"
+msgstr "Land clearing"
+
+#: 10829
+msgid "Erosion"
+msgstr "Erosion"
+
+#: 10830
+msgid "Incendie/Feu"
+msgstr "Fire/Flames"
+
+#: 10831
+msgid "Inondation/Crue"
+msgstr "Flood"
+
+#: 10833
+msgid "Pollution"
+msgstr "Contamination"
+
+#: 10835
+msgid "Faune d'élevage"
+msgstr "Fauna of livestock"
+
+#: 10836
+msgid "Faune sauvage"
+msgstr "Wildlife"
+
+#: 10837
+msgid "Décharge"
+msgstr "Discharge"
+
+#: 10838
+msgid "Centre d'enfouissement des déchets"
+msgstr "Waste disposal centre"
+
+#: 10839
+msgid "Station d'épuration"
+msgstr "Sewage treatment plant"
+
+#: 10840
+msgid "Incinérateur"
+msgstr "Incineration"
+
+#: 10862
+msgid "Opéra"
+msgstr "Opera"
+
+#: 10863
+msgid "Cinéma"
+msgstr "Cinema"
+
+#: 10864
+msgid "Théatre"
+msgstr "Theatre"
+
+#: 10948
+msgid "Abbaye"
+msgstr "Abbey"
+
+#: 10949
+msgid "Cathédrale"
+msgstr "Cathedral"
+
+#: 10950
+msgid "Chapelle"
+msgstr "Chapel"
+
+#: 10951
+msgid "Clocher"
+msgstr "Bell tower"
+
+#: 10952
+msgid "Couvent"
+msgstr "Convent"
+
+#: 10953
+msgid "Eglise"
+msgstr "Church"
+
+#: 10954
+msgid "Basilique"
+msgstr "Basilica"
+
+#: 10955
+msgid "Monastère"
+msgstr "Monastery"
+
+#: 10956
+msgid "Mosquée"
+msgstr "Mosque"
+
+#: 10957
+msgid "Minaret"
+msgstr "Minaret"
+
+#: 10958
+msgid "Prieuré"
+msgstr "Priory"
+
+#: 10959
+msgid "Synagogue"
+msgstr "Synagogue"
+
+#: 10960
+msgid "Temple"
+msgstr "Temple"
+
+#: 11012
+msgid "Cale sêche"
+msgstr "Hold dryer"
+
+#: 11015
+msgid "Citerne/Réservoir"
+msgstr "Cistern/tank"
+
+#: 11016
+msgid "Zone industrielle"
+msgstr "Industrial park"
+
+#: 11021
+msgid "Logistique"
+msgstr "Logistics"
+
+#: 11027
+msgid "Concession automobile"
+msgstr "Car dealership"
+
+#: 11031
+msgid "Maison Communale"
+msgstr "Town hall"
+
+#: 11033
+msgid "Collégiale"
+msgstr "Collegiate church"
+
+#: 11040
+msgid "Intercommunale"
+msgstr "Intercommunal"
+
+#: 11044
+msgid "Usine de biométhanisation"
+msgstr "Digestion plant"
+
+#: 11048
+msgid "Parc à conteneurs"
+msgstr "Waste reception centre"
+
+#: 11051
+msgid "Beffroi"
+msgstr "Belfry"
+
+#: 11053
+msgid "Caserne Pompiers"
+msgstr "Fire Station"
+
+#: 11058
+msgid "Traitement et valorisation"
+msgstr "Treatment and recovery"
+
+#: 11062
+msgid "Institution Européenne"
+msgstr "Institution European"
+
+#: 11066
+msgid "Chantier de dépollution"
+msgstr "Depollution project"
+
+#: 11069
+msgid "Site de versage"
+msgstr "Dump site"
+
+#: 11071
+msgid "Services techniques"
+msgstr "Technical Services"
+
+#: 11077
+msgid "Palais de justice"
+msgstr "Court house"
+
+#: 11078
+msgid "Festival"
+msgstr "Festival"
+
+#: 11082
+msgid "Bibliothèque"
+msgstr "Library"
+
+#: 11083
+msgid "Poste et télécommunications"
+msgstr "Post and telecommunications"
+
+#: 11085
+msgid "Hôtel de Police"
+msgstr "Police station"
+
+#: 11086
+msgid "Matériaux/Matériel (fabrication et commerce)"
+msgstr "Materials/equipment (manufacturing and trade)"
+
+#: 14097
+msgid "Production de bioéthanol"
+msgstr "Bioethanol production"
+
+#: 14098
+msgid "Centrale Biomasse"
+msgstr "Plant biomass"
+
+#: 14113
+msgid "Compostage"
+msgstr "Compost"
+
+#: 10760
+msgid "Gaz"
+msgstr "Gas"
+
+#: 10761
+msgid "Pétrole"
+msgstr "Oil"
+
+#: 11092
+msgid "Briqueterie"
+msgstr "Brickyard"
+
+#~ msgid "Labyrinthe"
+#~ msgstr "Labyrinth"
+
+#~ msgid "Autre"
+#~ msgstr "Other"

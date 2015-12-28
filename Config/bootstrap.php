@@ -114,4 +114,6 @@ Configure::write('awsESHosts', ['https://search-globalview-64tdo3cxwpdh5vwkwlerh
 
 Configure::write('languages', ['fr','nl','en']);
 
+Configure::write('rootKeywordName', '1-PHOTOTHEQUE');
 
+Configure::write('googleApiKey', 'AIzaSyDqvofVJSIZXBfqxaLw9GNHc9cOBgdMlH8');

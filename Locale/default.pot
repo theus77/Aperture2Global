@@ -1,0 +1,1591 @@
+# LANGUAGE translation of https://github.com/theus77/Aperture2Global
+# Copyright 2015 Theus Deka <me@theus.be>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Aperture2Global\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: 10697
+msgid "ENTREPRISES & ECONOMIE"
+msgstr ""
+
+#: 10750
+msgid "TRANSPORTS & COMMUNICATIONS"
+msgstr ""
+
+#: 10819
+msgid "PAYSAGES & ENVIRONNEMENT"
+msgstr ""
+
+#: 10854
+msgid "TOURISME & LOISIRS"
+msgstr ""
+
+#: 10901
+msgid "ARCHITECTURE & URBANISME"
+msgstr ""
+
+#: 10940
+msgid "MONUMENTS & SITES HISTORIQUES"
+msgstr ""
+
+#: 10973
+msgid "GRAPHISME"
+msgstr ""
+
+#: 11006
+msgid "COLLECTIONS"
+msgstr ""
+
+#: 10713
+msgid "Entreprise & économie"
+msgstr ""
+
+#: 10721
+msgid "Chantier"
+msgstr ""
+
+#: 10728
+msgid "Agriculture"
+msgstr ""
+
+#: 11074
+msgid "Activités commerciales"
+msgstr ""
+
+#: 11080
+msgid "Secteurs"
+msgstr ""
+
+#: 10751
+msgid "Ouvrage d\'art"
+msgstr ""
+
+#: 10752
+msgid "Télécommunications"
+msgstr ""
+
+#: 10773
+msgid "Transport aérien"
+msgstr ""
+
+#: 10779
+msgid "Transport férroviaire"
+msgstr ""
+
+#: 10785
+msgid "Transport maritime"
+msgstr ""
+
+#: 10804
+msgid "Transport routier"
+msgstr ""
+
+#: 10813
+msgid "Pont à gibier"
+msgstr ""
+
+#: 10814
+msgid "Véhicule"
+msgstr ""
+
+#: 10818
+msgid "Embouteillage"
+msgstr ""
+
+#: 10820
+msgid "Paysage & Relief"
+msgstr ""
+
+#: 10826
+msgid "Environnement/Ecologie"
+msgstr ""
+
+#: 10842
+msgid "Eau"
+msgstr ""
+
+#: 10855
+msgid "Equipement culturel"
+msgstr ""
+
+#: 10865
+msgid "Installation de loisir"
+msgstr ""
+
+#: 10880
+msgid "Equipement sportif"
+msgstr ""
+
+#: 10891
+msgid "Sport"
+msgstr ""
+
+#: 10902
+msgid "Bâtiment & Lieu public"
+msgstr ""
+
+#: 10911
+msgid "Villes & Vilages"
+msgstr ""
+
+#: 10930
+msgid "Habitat"
+msgstr ""
+
+#: 10942
+msgid "Patrimoine bâti"
+msgstr ""
+
+#: 10963
+msgid "Monument"
+msgstr ""
+
+#: 10974
+msgid "Forme"
+msgstr ""
+
+#: 10984
+msgid "Saison"
+msgstr ""
+
+#: 10989
+msgid "Couleur"
+msgstr ""
+
+#: 10999
+msgid "Insolite"
+msgstr ""
+
+#: 11000
+msgid "Géoglyphe"
+msgstr ""
+
+#: 11001
+msgid "Mosaïque"
+msgstr ""
+
+#: 14122
+msgid "Pattern"
+msgstr ""
+
+#: 11007
+msgid "Reportage multi-angles"
+msgstr ""
+
+#: 11034
+msgid "Best-Of"
+msgstr ""
+
+#: 11041
+msgid "Châteaux"
+msgstr ""
+
+#: 10704
+msgid "Industrie"
+msgstr ""
+
+#: 10709
+msgid "Carrière/Sablière"
+msgstr ""
+
+#: 10714
+msgid "Parc d\'activité économique"
+msgstr ""
+
+#: 10715
+msgid "Technopole"
+msgstr ""
+
+#: 10716
+msgid "Entreprise"
+msgstr ""
+
+#: 10718
+msgid "Entrepôt/Hangar"
+msgstr ""
+
+#: 11010
+msgid "Immeuble de bureaux"
+msgstr ""
+
+#: 11026
+msgid "Bassin de décantation"
+msgstr ""
+
+#: 11028
+msgid "Station service"
+msgstr ""
+
+#: 11056
+msgid "Centre de Recherche/Laboratoire"
+msgstr ""
+
+#: 11057
+msgid "Communication"
+msgstr ""
+
+#: 11064
+msgid "Centre de formation"
+msgstr ""
+
+#: 10723
+msgid "Chantier naval"
+msgstr ""
+
+#: 10725
+msgid "Friche industrielle/Site désafecté"
+msgstr ""
+
+#: 10726
+msgid "Site reconverti"
+msgstr ""
+
+#: 11067
+msgid "Terrain à batir"
+msgstr ""
+
+#: 10729
+msgid "Exploitation agricole"
+msgstr ""
+
+#: 10730
+msgid "Culture"
+msgstr ""
+
+#: 10737
+msgid "Elevage"
+msgstr ""
+
+#: 10738
+msgid "Travaux agricoles"
+msgstr ""
+
+#: 10746
+msgid "Véhicule agricole"
+msgstr ""
+
+#: 11013
+msgid "Ferme"
+msgstr ""
+
+#: 11014
+msgid "Moulin"
+msgstr ""
+
+#: 10753
+msgid "Aqueduc"
+msgstr ""
+
+#: 10754
+msgid "Ascensceur à bateaux"
+msgstr ""
+
+#: 10755
+msgid "Digue"
+msgstr ""
+
+#: 10756
+msgid "Passerelle"
+msgstr ""
+
+#: 10757
+msgid "Pont"
+msgstr ""
+
+#: 10758
+msgid "Viaduc"
+msgstr ""
+
+#: 10763
+msgid "Ecluse"
+msgstr ""
+
+#: 10764
+msgid "Tunnel"
+msgstr ""
+
+#: 11039
+msgid "Barrage"
+msgstr ""
+
+#: 10765
+msgid "Antenne"
+msgstr ""
+
+#: 10767
+msgid "Ligne électrique"
+msgstr ""
+
+#: 10768
+msgid "Observatoire"
+msgstr ""
+
+#: 10769
+msgid "Parabole"
+msgstr ""
+
+#: 10770
+msgid "Pylône"
+msgstr ""
+
+#: 10771
+msgid "Radar"
+msgstr ""
+
+#: 10772
+msgid "Tour hertzienne"
+msgstr ""
+
+#: 10774
+msgid "Aéroport/Aérodrome"
+msgstr ""
+
+#: 10775
+msgid "Avion"
+msgstr ""
+
+#: 10776
+msgid "Hélicoptère"
+msgstr ""
+
+#: 10777
+msgid "Montgolfière/Ballon"
+msgstr ""
+
+#: 10778
+msgid "ULM/Deltaplane"
+msgstr ""
+
+#: 10780
+msgid "Gare de triage/Gare de formation"
+msgstr ""
+
+#: 10781
+msgid "Gare"
+msgstr ""
+
+#: 10782
+msgid "Gare de marchandises"
+msgstr ""
+
+#: 10783
+msgid "Train/TGV"
+msgstr ""
+
+#: 10784
+msgid "Voie ferrée"
+msgstr ""
+
+#: 11032
+msgid "Quai"
+msgstr ""
+
+#: 11035
+msgid "Métro/Tramway"
+msgstr ""
+
+#: 14118
+msgid "Ateliers"
+msgstr ""
+
+#: 10789
+msgid "Balise/Bouée"
+msgstr ""
+
+#: 10790
+msgid "Phare"
+msgstr ""
+
+#: 10793
+msgid "Navire"
+msgstr ""
+
+#: 10794
+msgid "Port"
+msgstr ""
+
+#: 11011
+msgid "Quai/Digue"
+msgstr ""
+
+#: 10805
+msgid "Autoroute"
+msgstr ""
+
+#: 10806
+msgid "Route"
+msgstr ""
+
+#: 10807
+msgid "Chemin/Sentier"
+msgstr ""
+
+#: 10808
+msgid "Carrefour/Echangeur"
+msgstr ""
+
+#: 10811
+msgid "Rond-point"
+msgstr ""
+
+#: 10812
+msgid "Parking"
+msgstr ""
+
+#: 11023
+msgid "Gare routière"
+msgstr ""
+
+#: 10815
+msgid "Voiture"
+msgstr ""
+
+#: 10816
+msgid "Camion"
+msgstr ""
+
+#: 10817
+msgid "Autobus/Car"
+msgstr ""
+
+#: 10821
+msgid "Colline/Coteau"
+msgstr ""
+
+#: 10822
+msgid "Mont/Montagne"
+msgstr ""
+
+#: 10823
+msgid "Falaise/Rocher"
+msgstr ""
+
+#: 10824
+msgid "Sommet/Col"
+msgstr ""
+
+#: 10825
+msgid "Plaine/Vallon"
+msgstr ""
+
+#: 11002
+msgid "Forêt/Bois/Arbres"
+msgstr ""
+
+#: 10827
+msgid "Catastrophe"
+msgstr ""
+
+#: 10832
+msgid "Réserve/Parc naturel"
+msgstr ""
+
+#: 10834
+msgid "Faune"
+msgstr ""
+
+#: 10841
+msgid "Traitement des déchets"
+msgstr ""
+
+#: 11017
+msgid "Paysage de campagne"
+msgstr ""
+
+#: 11018
+msgid "Paysage industriel"
+msgstr ""
+
+#: 11019
+msgid "Paysage urbain"
+msgstr ""
+
+#: 11061
+msgid "Batex"
+msgstr ""
+
+#: 10843
+msgid "Cote/Littoral"
+msgstr ""
+
+#: 10844
+msgid "Fleuve/Rivière"
+msgstr ""
+
+#: 10845
+msgid "Confluent"
+msgstr ""
+
+#: 10846
+msgid "Chenal"
+msgstr ""
+
+#: 10847
+msgid "Embouchure/Delta"
+msgstr ""
+
+#: 10848
+msgid "Canal"
+msgstr ""
+
+#: 10849
+msgid "Méandre"
+msgstr ""
+
+#: 10850
+msgid "Lac/Etang/Bassin"
+msgstr ""
+
+#: 10851
+msgid "Cascade/Chute d\'eau"
+msgstr ""
+
+#: 10852
+msgid "Île/Îlot/Presqu\'île"
+msgstr ""
+
+#: 10853
+msgid "jet d\'eau/Fontaine"
+msgstr ""
+
+#: 11046
+msgid "Château d\'eau"
+msgstr ""
+
+#: 14117
+msgid "Darse"
+msgstr ""
+
+#: 14120
+msgid "Plage"
+msgstr ""
+
+#: 10856
+msgid "Site touristique"
+msgstr ""
+
+#: 10857
+msgid "Parc d\'exposition"
+msgstr ""
+
+#: 10858
+msgid "Palais des congrès/Centre de conférence"
+msgstr ""
+
+#: 10859
+msgid "Musée"
+msgstr ""
+
+#: 10860
+msgid "Lieu d\'exposition"
+msgstr ""
+
+#: 10861
+msgid "Salle de spectacle"
+msgstr ""
+
+#: 11050
+msgid "Centre culturel"
+msgstr ""
+
+#: 10866
+msgid "Domaine provincial"
+msgstr ""
+
+#: 10867
+msgid "Parc d\'attractions"
+msgstr ""
+
+#: 10868
+msgid "Complexe hôtelier"
+msgstr ""
+
+#: 10869
+msgid "Village de vacances"
+msgstr ""
+
+#: 10870
+msgid "Thermes"
+msgstr ""
+
+#: 10871
+msgid "Zoo/Parc animalier"
+msgstr ""
+
+#: 10872
+msgid "Hôtel/Restaurant"
+msgstr ""
+
+#: 10873
+msgid "Salle de réception"
+msgstr ""
+
+#: 10874
+msgid "Labyrinthe (Installation de loisir)"
+msgstr ""
+
+#: 10875
+msgid "Cirque/fête foraine"
+msgstr ""
+
+#: 10876
+msgid "Casino"
+msgstr ""
+
+#: 10877
+msgid "Camping"
+msgstr ""
+
+#: 10878
+msgid "Autre (Installation de loisir)"
+msgstr ""
+
+#: 10879
+msgid "Complexe touristique"
+msgstr ""
+
+#: 11045
+msgid "Gite"
+msgstr ""
+
+#: 10881
+msgid "Stade"
+msgstr ""
+
+#: 10882
+msgid "Circuit automobile"
+msgstr ""
+
+#: 10883
+msgid "Court de tennis"
+msgstr ""
+
+#: 10884
+msgid "Terrain de Golf"
+msgstr ""
+
+#: 10885
+msgid "Hippodrome"
+msgstr ""
+
+#: 10886
+msgid "Centre équestre"
+msgstr ""
+
+#: 10887
+msgid "Base nautique"
+msgstr ""
+
+#: 10888
+msgid "Complexe sportif"
+msgstr ""
+
+#: 10889
+msgid "Piscine"
+msgstr ""
+
+#: 10890
+msgid "Aquadrome"
+msgstr ""
+
+#: 11024
+msgid "Piste cyclable"
+msgstr ""
+
+#: 11055
+msgid "Autre (Equipement sportif)"
+msgstr ""
+
+#: 11070
+msgid "Salle de fitness"
+msgstr ""
+
+#: 11091
+msgid "Salle omnisports"
+msgstr ""
+
+#: 10892
+msgid "Sport nautique"
+msgstr ""
+
+#: 10893
+msgid "Sport mécanique"
+msgstr ""
+
+#: 10894
+msgid "Sport d\'hiver"
+msgstr ""
+
+#: 10895
+msgid "Tennis"
+msgstr ""
+
+#: 10896
+msgid "Escalade"
+msgstr ""
+
+#: 10897
+msgid "Peche"
+msgstr ""
+
+#: 10898
+msgid "Chasse"
+msgstr ""
+
+#: 10899
+msgid "Détente"
+msgstr ""
+
+#: 10900
+msgid "Sport d\'équipe"
+msgstr ""
+
+#: 11037
+msgid "Golf"
+msgstr ""
+
+#: 11043
+msgid "Spéléologie"
+msgstr ""
+
+#: 11052
+msgid "Football"
+msgstr ""
+
+#: 11054
+msgid "Parachutisme"
+msgstr ""
+
+#: 11060
+msgid "Athlétisme"
+msgstr ""
+
+#: 11072
+msgid "Voile"
+msgstr ""
+
+#: 11084
+msgid "Autre (Sport)"
+msgstr ""
+
+#: 14121
+msgid "Activité balnéaire"
+msgstr ""
+
+#: 10903
+msgid "Bâtiment administratif"
+msgstr ""
+
+#: 10904
+msgid "Ecole/Collège/Pensionnat"
+msgstr ""
+
+#: 10905
+msgid "Prison/Maison d\'arrêt/Centre d\'accueil"
+msgstr ""
+
+#: 10906
+msgid "Université/Ecole/Institut"
+msgstr ""
+
+#: 10907
+msgid "Domaine/Bâtiment militaire"
+msgstr ""
+
+#: 10908
+msgid "Espace vert/parc & jardin"
+msgstr ""
+
+#: 10909
+msgid "Cimetière"
+msgstr ""
+
+#: 10910
+msgid "Crématorium"
+msgstr ""
+
+#: 11022
+msgid "Hôpital/Clinique/Centre de Santé"
+msgstr ""
+
+#: 14123
+msgid "Domaine Royal"
+msgstr ""
+
+#: 10912
+msgid "Vue générale"
+msgstr ""
+
+#: 10913
+msgid "Centre"
+msgstr ""
+
+#: 10915
+msgid "Centre d\'affaires"
+msgstr ""
+
+#: 10916
+msgid "Place  esplanade  square"
+msgstr ""
+
+#: 10917
+msgid "Avenue"
+msgstr ""
+
+#: 10918
+msgid "Rue"
+msgstr ""
+
+#: 10919
+msgid "Quartier ancien"
+msgstr ""
+
+#: 10920
+msgid "Quartier moderne"
+msgstr ""
+
+#: 10921
+msgid "Quartier commerçant"
+msgstr ""
+
+#: 10922
+msgid "Ville"
+msgstr ""
+
+#: 10923
+msgid "Hameau/Lieu-dit"
+msgstr ""
+
+#: 10924
+msgid "Les plus beaux villages de Wallonie"
+msgstr ""
+
+#: 10925
+msgid "Zone d\'intérêt stratégique"
+msgstr ""
+
+#: 10926
+msgid "Bâtiment de prestige"
+msgstr ""
+
+#: 10927
+msgid "Marché"
+msgstr ""
+
+#: 10928
+msgid "Toit"
+msgstr ""
+
+#: 10929
+msgid "Terrasse"
+msgstr ""
+
+#: 11038
+msgid "Village"
+msgstr ""
+
+#: 10931
+msgid "Habitat collectif"
+msgstr ""
+
+#: 10932
+msgid "Habitat individuel"
+msgstr ""
+
+#: 10933
+msgid "Immeuble/building"
+msgstr ""
+
+#: 10934
+msgid "Habitat urbain"
+msgstr ""
+
+#: 10935
+msgid "Gratte-ciel"
+msgstr ""
+
+#: 10936
+msgid "Quartier résidentiel"
+msgstr ""
+
+#: 10937
+msgid "Lotissement/Cité"
+msgstr ""
+
+#: 10938
+msgid "Habitat isolé"
+msgstr ""
+
+#: 10939
+msgid "Maison/Villa"
+msgstr ""
+
+#: 11025
+msgid "Seigneurie/Maison de repos"
+msgstr ""
+
+#: 11030
+msgid "Cité"
+msgstr ""
+
+#: 10943
+msgid "Monument classé"
+msgstr ""
+
+#: 10944
+msgid "Château"
+msgstr ""
+
+#: 10945
+msgid "Blockhaus"
+msgstr ""
+
+#: 10946
+msgid "Rempart"
+msgstr ""
+
+#: 10947
+msgid "Edifice religieux"
+msgstr ""
+
+#: 10961
+msgid "Jardin"
+msgstr ""
+
+#: 10962
+msgid "Parterre"
+msgstr ""
+
+#: 11003
+msgid "Fort"
+msgstr ""
+
+#: 11004
+msgid "Citadelle"
+msgstr ""
+
+#: 11005
+msgid "Douve"
+msgstr ""
+
+#: 11008
+msgid "Palais"
+msgstr ""
+
+#: 11009
+msgid "Patrimoine Mondial de l\'UNESCO"
+msgstr ""
+
+#: 11088
+msgid "Commanderie"
+msgstr ""
+
+#: 10964
+msgid "Mausolée  nécropole"
+msgstr ""
+
+#: 10965
+msgid "Mémorial /Monument aux morts"
+msgstr ""
+
+#: 10966
+msgid "Monument historique"
+msgstr ""
+
+#: 10967
+msgid "Ruine"
+msgstr ""
+
+#: 10968
+msgid "Site archéologique"
+msgstr ""
+
+#: 10969
+msgid "Site antique"
+msgstr ""
+
+#: 10970
+msgid "Site Romain"
+msgstr ""
+
+#: 10971
+msgid "Statue /sculpture"
+msgstr ""
+
+#: 10972
+msgid "Tour"
+msgstr ""
+
+#: 11042
+msgid "Histoire contemporaine"
+msgstr ""
+
+#: 11063
+msgid "Pavillon"
+msgstr ""
+
+#: 10975
+msgid "Carré"
+msgstr ""
+
+#: 10976
+msgid "Coeur"
+msgstr ""
+
+#: 10977
+msgid "Croix"
+msgstr ""
+
+#: 10978
+msgid "Labyrinthe (Forme)"
+msgstr ""
+
+#: 10979
+msgid "Ligne"
+msgstr ""
+
+#: 10980
+msgid "Rectangle"
+msgstr ""
+
+#: 10981
+msgid "Rond/cercle"
+msgstr ""
+
+#: 10982
+msgid "Triangle"
+msgstr ""
+
+#: 10983
+msgid "Zig-Zag/lacet"
+msgstr ""
+
+#: 11029
+msgid "Pentagone"
+msgstr ""
+
+#: 11047
+msgid "Etoile"
+msgstr ""
+
+#: 11076
+msgid "Courbe"
+msgstr ""
+
+#: 10985
+msgid "Automne"
+msgstr ""
+
+#: 10986
+msgid "Eté"
+msgstr ""
+
+#: 10987
+msgid "Hiver"
+msgstr ""
+
+#: 10988
+msgid "Printemps"
+msgstr ""
+
+#: 10990
+msgid "Blanc"
+msgstr ""
+
+#: 10991
+msgid "Bleu"
+msgstr ""
+
+#: 10992
+msgid "Jaune"
+msgstr ""
+
+#: 10993
+msgid "Multicolore"
+msgstr ""
+
+#: 10994
+msgid "Noir"
+msgstr ""
+
+#: 10995
+msgid "Orange"
+msgstr ""
+
+#: 10996
+msgid "Rouge"
+msgstr ""
+
+#: 10997
+msgid "Vert"
+msgstr ""
+
+#: 10998
+msgid "Violet"
+msgstr ""
+
+#: 10719
+msgid "Centre commercial"
+msgstr ""
+
+#: 10720
+msgid "Magasin"
+msgstr ""
+
+#: 11075
+msgid "Foire"
+msgstr ""
+
+#: 10698
+msgid "Energie"
+msgstr ""
+
+#: 11020
+msgid "Agroalimentaire"
+msgstr ""
+
+#: 11049
+msgid "Filière Bois"
+msgstr ""
+
+#: 11059
+msgid "Bâtiment et travaux publics"
+msgstr ""
+
+#: 11065
+msgid "Transport/Logistique"
+msgstr ""
+
+#: 11068
+msgid "Aéronautique"
+msgstr ""
+
+#: 11079
+msgid "Pharmacie/Paramédical"
+msgstr ""
+
+#: 11081
+msgid "Automobile"
+msgstr ""
+
+#: 11087
+msgid "Construction mécanique"
+msgstr ""
+
+#: 14116
+msgid "Textile"
+msgstr ""
+
+#: 14119
+msgid "Entreprise de service"
+msgstr ""
+
+#: 10699
+msgid "Centrale hydro-électrique"
+msgstr ""
+
+#: 10700
+msgid "Centrale nucléaire"
+msgstr ""
+
+#: 10701
+msgid "Centrale thermique"
+msgstr ""
+
+#: 10702
+msgid "Energie éolienne"
+msgstr ""
+
+#: 10703
+msgid "Energie solaire"
+msgstr ""
+
+#: 10706
+msgid "Hydrocarbure"
+msgstr ""
+
+#: 10707
+msgid "Métallurgie"
+msgstr ""
+
+#: 10708
+msgid "Chimie"
+msgstr ""
+
+#: 10710
+msgid "Mine"
+msgstr ""
+
+#: 10711
+msgid "Terril"
+msgstr ""
+
+#: 10712
+msgid "Autre (Industrie)"
+msgstr ""
+
+#: 10717
+msgid "Usine"
+msgstr ""
+
+#: 10722
+msgid "Chantier de bâtiment"
+msgstr ""
+
+#: 10724
+msgid "Chantier d\'infrastructure"
+msgstr ""
+
+#: 10731
+msgid "Horticulture"
+msgstr ""
+
+#: 10732
+msgid "Culture sous serres"
+msgstr ""
+
+#: 10733
+msgid "Pépinière"
+msgstr ""
+
+#: 10734
+msgid "Verger/Arbre fruitier"
+msgstr ""
+
+#: 10735
+msgid "Sylviculture"
+msgstr ""
+
+#: 10736
+msgid "Culture en plein champ"
+msgstr ""
+
+#: 10739
+msgid "Moisson"
+msgstr ""
+
+#: 10740
+msgid "Labour"
+msgstr ""
+
+#: 10741
+msgid "Récolte"
+msgstr ""
+
+#: 10742
+msgid "Prairie/Pâturage"
+msgstr ""
+
+#: 10744
+msgid "Viticulture"
+msgstr ""
+
+#: 10745
+msgid "Vendange"
+msgstr ""
+
+#: 10747
+msgid "Tracteur"
+msgstr ""
+
+#: 10749
+msgid "Moissonneuse"
+msgstr ""
+
+#: 10786
+msgid "Port de commerce"
+msgstr ""
+
+#: 10787
+msgid "Port de pêche"
+msgstr ""
+
+#: 10788
+msgid "Port de plaisance"
+msgstr ""
+
+#: 10791
+msgid "Barge/Péniche"
+msgstr ""
+
+#: 10792
+msgid "Bateau de commerce"
+msgstr ""
+
+#: 10795
+msgid "Bateau de pêche"
+msgstr ""
+
+#: 10796
+msgid "Bateau de plaisance"
+msgstr ""
+
+#: 10797
+msgid "Ferry"
+msgstr ""
+
+#: 10798
+msgid "Paquebot"
+msgstr ""
+
+#: 10799
+msgid "Epave"
+msgstr ""
+
+#: 10800
+msgid "Pétrolier"
+msgstr ""
+
+#: 10801
+msgid "Voilier"
+msgstr ""
+
+#: 10802
+msgid "Port industriel"
+msgstr ""
+
+#: 10803
+msgid "Navire de guerre"
+msgstr ""
+
+#: 10809
+msgid "Route sineuse"
+msgstr ""
+
+#: 10810
+msgid "Virage"
+msgstr ""
+
+#: 10828
+msgid "Déforestation"
+msgstr ""
+
+#: 10829
+msgid "Erosion"
+msgstr ""
+
+#: 10830
+msgid "Incendie/Feu"
+msgstr ""
+
+#: 10831
+msgid "Inondation/Crue"
+msgstr ""
+
+#: 10833
+msgid "Pollution"
+msgstr ""
+
+#: 10835
+msgid "Faune d\'élevage"
+msgstr ""
+
+#: 10836
+msgid "Faune sauvage"
+msgstr ""
+
+#: 10837
+msgid "Décharge"
+msgstr ""
+
+#: 10838
+msgid "Centre d\'enfouissement des déchets"
+msgstr ""
+
+#: 10839
+msgid "Station d\'épuration"
+msgstr ""
+
+#: 10840
+msgid "Incinérateur"
+msgstr ""
+
+#: 10862
+msgid "Opéra"
+msgstr ""
+
+#: 10863
+msgid "Cinéma"
+msgstr ""
+
+#: 10864
+msgid "Théatre"
+msgstr ""
+
+#: 10948
+msgid "Abbaye"
+msgstr ""
+
+#: 10949
+msgid "Cathédrale"
+msgstr ""
+
+#: 10950
+msgid "Chapelle"
+msgstr ""
+
+#: 10951
+msgid "Clocher"
+msgstr ""
+
+#: 10952
+msgid "Couvent"
+msgstr ""
+
+#: 10953
+msgid "Eglise"
+msgstr ""
+
+#: 10954
+msgid "Basilique"
+msgstr ""
+
+#: 10955
+msgid "Monastère"
+msgstr ""
+
+#: 10956
+msgid "Mosquée"
+msgstr ""
+
+#: 10957
+msgid "Minaret"
+msgstr ""
+
+#: 10958
+msgid "Prieuré"
+msgstr ""
+
+#: 10959
+msgid "Synagogue"
+msgstr ""
+
+#: 10960
+msgid "Temple"
+msgstr ""
+
+#: 11012
+msgid "Cale sêche"
+msgstr ""
+
+#: 11015
+msgid "Citerne/Réservoir"
+msgstr ""
+
+#: 11016
+msgid "Zone industrielle"
+msgstr ""
+
+#: 11021
+msgid "Logistique"
+msgstr ""
+
+#: 11027
+msgid "Concession automobile"
+msgstr ""
+
+#: 11031
+msgid "Maison Communale"
+msgstr ""
+
+#: 11033
+msgid "Collégiale"
+msgstr ""
+
+#: 11040
+msgid "Intercommunale"
+msgstr ""
+
+#: 11044
+msgid "Usine de biométhanisation"
+msgstr ""
+
+#: 11048
+msgid "Parc à conteneurs"
+msgstr ""
+
+#: 11051
+msgid "Beffroi"
+msgstr ""
+
+#: 11053
+msgid "Caserne Pompiers"
+msgstr ""
+
+#: 11058
+msgid "Traitement et valorisation"
+msgstr ""
+
+#: 11062
+msgid "Institution Européenne"
+msgstr ""
+
+#: 11066
+msgid "Chantier de dépollution"
+msgstr ""
+
+#: 11069
+msgid "Site de versage"
+msgstr ""
+
+#: 11071
+msgid "Services techniques"
+msgstr ""
+
+#: 11077
+msgid "Palais de justice"
+msgstr ""
+
+#: 11078
+msgid "Festival"
+msgstr ""
+
+#: 11082
+msgid "Bibliothèque"
+msgstr ""
+
+#: 11083
+msgid "Poste et télécommunications"
+msgstr ""
+
+#: 11085
+msgid "Hôtel de Police"
+msgstr ""
+
+#: 11086
+msgid "Matériaux/Matériel (fabrication et commerce)"
+msgstr ""
+
+#: 14097
+msgid "Production de bioéthanol"
+msgstr ""
+
+#: 14098
+msgid "Centrale Biomasse"
+msgstr ""
+
+#: 14113
+msgid "Compostage"
+msgstr ""
+
+#: 10760
+msgid "Gaz"
+msgstr ""
+
+#: 10761
+msgid "Pétrole"
+msgstr ""
+
+#: 11092
+msgid "Briqueterie"
+msgstr ""
+

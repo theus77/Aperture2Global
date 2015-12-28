@@ -1,0 +1,1187 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: globalview\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Last-Translator: Mathieu DE Keyzer <mathieu@dekeyzer.net>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: nl\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+msgid "ENTREPRISES & ECONOMIE"
+msgstr "Bedrij & Economie"
+
+msgid "TRANSPORTS & COMMUNICATIONS"
+msgstr "Transport & Communicatie"
+
+msgid "PAYSAGES & ENVIRONNEMENT"
+msgstr "Landschap & Milieu"
+
+msgid "TOURISME & LOISIRS"
+msgstr "Toerisme & Leisure"
+
+msgid "ARCHITECTURE & URBANISME"
+msgstr "Platform & Stedenbouw"
+
+msgid "MONUMENTS & SITES HISTORIQUES"
+msgstr "Momumenten & Historische sites"
+
+msgid "GRAPHISME"
+msgstr "Grafiek"
+
+msgid "COLLECTIONS"
+msgstr "Collecties"
+
+msgid "Entreprise & économie"
+msgstr "Zakelijke & Economie"
+
+msgid "Chantier"
+msgstr "Werf"
+
+msgid "Agriculture"
+msgstr "Landbouw"
+
+msgid "Activités commerciales"
+msgstr "Commerciële activiteiten"
+
+msgid "Secteurs"
+msgstr "Sectoren"
+
+msgid "Ouvrage d'art"
+msgstr "Kunstwerk"
+
+msgid "Télécommunications"
+msgstr "Telecommunicatie"
+
+msgid "Transport aérien"
+msgstr "Luchtvaart"
+
+msgid "Transport férroviaire"
+msgstr "Spoorvervoer"
+
+msgid "Transport maritime"
+msgstr "Maritiem vervoer"
+
+msgid "Transport routier"
+msgstr "Wegverkeer"
+
+msgid "Pont à gibier"
+msgstr "Brug spel"
+
+msgid "Véhicule"
+msgstr "Voertuig"
+
+msgid "Embouteillage"
+msgstr "File"
+
+msgid "Paysage & Relief"
+msgstr "Landschap & Terrein"
+
+msgid "Environnement/Ecologie"
+msgstr "Milieu/Ecologie"
+
+msgid "Eau"
+msgstr "Water"
+
+msgid "Equipement culturel"
+msgstr "Culturele apparatuur"
+
+msgid "Installation de loisir"
+msgstr "Recreatie faciliteit"
+
+msgid "Equipement sportif"
+msgstr "Sportuitrusting"
+
+msgid "Sport"
+msgstr "Sport"
+
+msgid "Bâtiment & Lieu public"
+msgstr "Gebouw & Openbare plaats"
+
+msgid "Villes & Vilages"
+msgstr "Steden & Dorpen"
+
+msgid "Habitat"
+msgstr "Habitat"
+
+msgid "Patrimoine bâti"
+msgstr "Gebouwd erfgoed"
+
+msgid "Monument"
+msgstr "Monument"
+
+msgid "Forme"
+msgstr "Vorm"
+
+msgid "Saison"
+msgstr "Seizoen"
+
+msgid "Couleur"
+msgstr "Kleur"
+
+msgid "Insolite"
+msgstr "Ongebruikelijk"
+
+msgid "Géoglyphe"
+msgstr "Geoglief"
+
+msgid "Mosaïque"
+msgstr "Mozaïek"
+
+msgid "Pattern"
+msgstr "Patroon"
+
+msgid "Reportage multi-angles"
+msgstr "Reportage multi hoek"
+
+msgid "Best-Of"
+msgstr "Best-Of"
+
+msgid "Châteaux"
+msgstr "Kasteel"
+
+msgid "Industrie"
+msgstr "Industrie"
+
+msgid "Carrière/Sablière"
+msgstr "Carrière/zandbak"
+
+msgid "Parc d'activité économique"
+msgstr "Economische activiteit Park"
+
+msgid "Technopole"
+msgstr "Technopole"
+
+msgid "Entreprise"
+msgstr "Bedrijfsleven"
+
+msgid "Entrepôt/Hangar"
+msgstr "Magazijn/Schuur"
+
+msgid "Immeuble de bureaux"
+msgstr "Kantoorgebouw"
+
+msgid "Bassin de décantation"
+msgstr "Bezinkingsbekken :"
+
+msgid "Station service"
+msgstr "Tankstation"
+
+msgid "Centre de Recherche/Laboratoire"
+msgstr "Centrum voor onderzoek/Laboratorium"
+
+msgid "Communication"
+msgstr "Communicatie"
+
+msgid "Centre de formation"
+msgstr "Opleidingscentrum"
+
+msgid "Chantier naval"
+msgstr "Scheepswerf"
+
+msgid "Friche industrielle/Site désafecté"
+msgstr "Brownfield/Site desafecte"
+
+msgid "Site reconverti"
+msgstr "Geconverteerde site"
+
+msgid "Terrain à batir"
+msgstr "Land"
+
+msgid "Exploitation agricole"
+msgstr "Landbouwbedrijf"
+
+msgid "Culture"
+msgstr "Cultuur"
+
+msgid "Elevage"
+msgstr "Veeteelt"
+
+msgid "Travaux agricoles"
+msgstr "Werk in de landbouw"
+
+msgid "Véhicule agricole"
+msgstr "Agrarische voertuigen"
+
+msgid "Ferme"
+msgstr "Boerderij"
+
+msgid "Moulin"
+msgstr "Molen"
+
+msgid "Aqueduc"
+msgstr "Aquaduct"
+
+msgid "Ascensceur à bateaux"
+msgstr "Lift voor boten"
+
+msgid "Digue"
+msgstr "Dijk"
+
+msgid "Passerelle"
+msgstr "Gateway"
+
+msgid "Pont"
+msgstr "Brug"
+
+msgid "Viaduc"
+msgstr "Viaduct"
+
+msgid "Ecluse"
+msgstr "Schutsluis"
+
+msgid "Tunnel"
+msgstr "Tunnel"
+
+msgid "Barrage"
+msgstr "Dam"
+
+msgid "Antenne"
+msgstr "Antenne"
+
+msgid "Ligne électrique"
+msgstr "Elektriciteitsleiding"
+
+msgid "Observatoire"
+msgstr "Observatorium"
+
+msgid "Parabole"
+msgstr "Parabool"
+
+msgid "Pylône"
+msgstr "Pyloon"
+
+msgid "Radar"
+msgstr "Radar"
+
+msgid "Tour hertzienne"
+msgstr "Straalzendertoren"
+
+msgid "Aéroport/Aérodrome"
+msgstr "Luchthaven/Aerodrome"
+
+msgid "Avion"
+msgstr "Vliegtuig"
+
+msgid "Hélicoptère"
+msgstr "Helikopter"
+
+msgid "Montgolfière/Ballon"
+msgstr "Hete lucht ballon"
+
+msgid "ULM/Deltaplane"
+msgstr "ULM/hang-gliding"
+
+msgid "Gare de triage/Gare de formation"
+msgstr "Station werf/trein vorming"
+
+msgid "Gare"
+msgstr "Treinstation"
+
+msgid "Gare de marchandises"
+msgstr "Goederen station"
+
+msgid "Train/TGV"
+msgstr "Trein/TGV"
+
+msgid "Voie ferrée"
+msgstr "Spoorweg"
+
+msgid "Quai"
+msgstr "Kaai"
+
+msgid "Métro/Tramway"
+msgstr "Metro/tram"
+
+msgid "Ateliers"
+msgstr "Werkplaatsen :"
+
+msgid "Balise/Bouée"
+msgstr "Label/Boei"
+
+msgid "Phare"
+msgstr "Vuurtoren"
+
+msgid "Navire"
+msgstr "Schip"
+
+msgid "Port"
+msgstr "Poort"
+
+msgid "Quai/Digue"
+msgstr "Dock/Zeewering"
+
+msgid "Autoroute"
+msgstr "Autosnelweg"
+
+msgid "Route"
+msgstr "Weg"
+
+msgid "Chemin/Sentier"
+msgstr "Pad/Trail"
+
+msgid "Carrefour/Echangeur"
+msgstr "Kruispunt/Warmtewisselaar"
+
+msgid "Rond-point"
+msgstr "Verkeersplein"
+
+msgid "Parking"
+msgstr "Parkeren"
+
+msgid "Gare routière"
+msgstr "Wegstation"
+
+msgid "Voiture"
+msgstr "Auto"
+
+msgid "Camion"
+msgstr "Vrachtwagen"
+
+msgid "Autobus/Car"
+msgstr "Bus/Auto"
+
+msgid "Colline/Coteau"
+msgstr "Hill/heuvel"
+
+msgid "Mont/Montagne"
+msgstr "Mount/Berg"
+
+msgid "Falaise/Rocher"
+msgstr "Cliff/Rock"
+
+msgid "Sommet/Col"
+msgstr "Top/Col"
+
+msgid "Plaine/Vallon"
+msgstr "Platte/Vallon"
+
+msgid "Forêt/Bois/Arbres"
+msgstr "Forest/Woud/Boom"
+
+msgid "Catastrophe"
+msgstr "Ramp"
+
+msgid "Réserve/Parc naturel"
+msgstr "Reserve/Natuurpark"
+
+msgid "Faune"
+msgstr "Fauna"
+
+msgid "Traitement des déchets"
+msgstr "Afvalverwerking"
+
+msgid "Paysage de campagne"
+msgstr "Platteland"
+
+msgid "Paysage industriel"
+msgstr "Industriële landschap"
+
+msgid "Paysage urbain"
+msgstr "Stadsgezicht"
+
+msgid "Batex"
+msgstr "Batex"
+
+msgid "Cote/Littoral"
+msgstr "Kust/Kustlijn"
+
+msgid "Fleuve/Rivière"
+msgstr "Rivier/Rivier"
+
+msgid "Confluent"
+msgstr "Samenvloeiing"
+
+msgid "Chenal"
+msgstr "Slop"
+
+msgid "Embouchure/Delta"
+msgstr "Mond/Delta"
+
+msgid "Canal"
+msgstr "Kanaal"
+
+msgid "Méandre"
+msgstr "Meander"
+
+msgid "Lac/Etang/Bassin"
+msgstr "Lake/Vijver/Zwembad"
+
+msgid "Cascade/Chute d'eau"
+msgstr "Cascade/Waterval"
+
+msgid "Île/Îlot/Presqu'île"
+msgstr "Eiland/Bijna-eiland"
+
+msgid "jet d'eau/Fontaine"
+msgstr "Jet van water/Fontein"
+
+msgid "Château d'eau"
+msgstr "Watertoren"
+
+msgid "Darse"
+msgstr "Dok"
+
+msgid "Plage"
+msgstr "Strand"
+
+msgid "Site touristique"
+msgstr "Toeristische site"
+
+msgid "Parc d'exposition"
+msgstr "Tentoonstellingspark"
+
+msgid "Palais des congrès/Centre de conférence"
+msgstr "Paleis van Congres/Conference centrum"
+
+msgid "Musée"
+msgstr "Museum"
+
+msgid "Lieu d'exposition"
+msgstr "Locatie tentoonstelling"
+
+msgid "Salle de spectacle"
+msgstr "Show room"
+
+msgid "Centre culturel"
+msgstr "Cultureel Centrum"
+
+msgid "Domaine provincial"
+msgstr "Provinciaal domein"
+
+msgid "Parc d'attractions"
+msgstr "Pretparken"
+
+msgid "Complexe hôtelier"
+msgstr "Hotel complexe"
+
+msgid "Village de vacances"
+msgstr "Vakantiedorp"
+
+msgid "Thermes"
+msgstr "Thermen"
+
+msgid "Zoo/Parc animalier"
+msgstr "Dierentuin/Wildlife Park"
+
+msgid "Hôtel/Restaurant"
+msgstr "Hotel/Restaurant"
+
+msgid "Salle de réception"
+msgstr "Recreatie faciliteit"
+
+msgid "Labyrinthe"
+msgstr "Doolhof"
+
+msgid "Cirque/fête foraine"
+msgstr "Circus/kermis"
+
+msgid "Casino"
+msgstr "Casino"
+
+msgid "Camping"
+msgstr "Camping"
+
+msgid "Autre"
+msgstr "Andere"
+
+msgid "Complexe touristique"
+msgstr "Toeristisch complex"
+
+msgid "Gite"
+msgstr "Self catering holiday verhuur"
+
+msgid "Stade"
+msgstr "Stadion"
+
+msgid "Circuit automobile"
+msgstr "Racecircuit"
+
+msgid "Court de tennis"
+msgstr "Tennisbaan"
+
+msgid "Terrain de Golf"
+msgstr "Golfterrein"
+
+msgid "Hippodrome"
+msgstr "Hippodroom"
+
+msgid "Centre équestre"
+msgstr "Centrum voor Paardensport"
+
+msgid "Base nautique"
+msgstr "Nautische base"
+
+msgid "Complexe sportif"
+msgstr "Sportcomplex"
+
+msgid "Piscine"
+msgstr "Zwembad"
+
+msgid "Aquadrome"
+msgstr "Aquadrome"
+
+msgid "Piste cyclable"
+msgstr "Fietspad"
+
+msgid "Salle de fitness"
+msgstr "Fitnessruimte"
+
+msgid "Salle omnisports"
+msgstr "Indoop arena"
+
+msgid "Sport nautique"
+msgstr "Watersport"
+
+msgid "Sport mécanique"
+msgstr "Mechanische sporten"
+
+msgid "Sport d'hiver"
+msgstr "Wintersport"
+
+msgid "Tennis"
+msgstr "Tennis"
+
+msgid "Escalade"
+msgstr "Klimsport"
+
+msgid "Peche"
+msgstr "Visserij"
+
+msgid "Chasse"
+msgstr "Jacht"
+
+msgid "Détente"
+msgstr "Detente"
+
+msgid "Sport d'équipe"
+msgstr "Teamsport"
+
+msgid "Golf"
+msgstr "Golf"
+
+msgid "Spéléologie"
+msgstr "Speleologie"
+
+msgid "Football"
+msgstr "Voetbal"
+
+msgid "Parachutisme"
+msgstr "Parachutespringen"
+
+msgid "Athlétisme"
+msgstr "Atletiek"
+
+msgid "Voile"
+msgstr "Scheepszeil"
+
+msgid "Activité balnéaire"
+msgstr "Resort activiteit"
+
+msgid "Bâtiment administratif"
+msgstr "Administratief gebouw"
+
+msgid "Ecole/Collège/Pensionnat"
+msgstr "School/College"
+
+msgid "Prison/Maison d'arrêt/Centre d'accueil"
+msgstr "Gevangenis/Huisarrest/Opvangcentrum"
+
+msgid "Université/Ecole/Institut"
+msgstr "Universiteit/School/Instituut"
+
+msgid "Domaine/Bâtiment militaire"
+msgstr "Militaire domein/gebouw"
+
+msgid "Espace vert/parc & jardin"
+msgstr "Ruimte groen/Park & tuin"
+
+msgid "Cimetière"
+msgstr "Begraafplaats"
+
+msgid "Crématorium"
+msgstr "Crematorium"
+
+msgid "Hôpital/Clinique/Centre de Santé"
+msgstr "Ziekenhuis/Kliniek/Gezondheidscentrum"
+
+msgid "Domaine Royal"
+msgstr "Koninklijk domein"
+
+msgid "Vue générale"
+msgstr "Overzicht"
+
+msgid "Centre"
+msgstr "Centrum"
+
+msgid "Centre d'affaires"
+msgstr "Business-centrum"
+
+msgid "Place  esplanade  square"
+msgstr "Plaats esplanade plein"
+
+msgid "Avenue"
+msgstr "Laan"
+
+msgid "Rue"
+msgstr "Straat"
+
+msgid "Quartier ancien"
+msgstr "Voormalig district"
+
+msgid "Quartier moderne"
+msgstr "Moderne wijk"
+
+msgid "Quartier commerçant"
+msgstr "Winkelcentrum"
+
+msgid "Ville"
+msgstr "Stad"
+
+msgid "Hameau/Lieu-dit"
+msgstr "Hamlet/plaats"
+
+msgid "Les plus beaux villages de Wallonie"
+msgstr "De mooiste dorpjes in Wallonië"
+
+msgid "Zone d'intérêt stratégique"
+msgstr "Gebied van strategisch belang"
+
+msgid "Bâtiment de prestige"
+msgstr "Prestige gebouw"
+
+msgid "Marché"
+msgstr "Markt"
+
+msgid "Toit"
+msgstr "Dak"
+
+msgid "Terrasse"
+msgstr "Terras"
+
+msgid "Village"
+msgstr "Dorp"
+
+msgid "Habitat collectif"
+msgstr "Plurifamiliar huisvesting"
+
+msgid "Habitat individuel"
+msgstr "Individuele huisvesting"
+
+msgid "Immeuble/building"
+msgstr "Kantoorgebouw/Gebouw"
+
+msgid "Habitat urbain"
+msgstr "Urban habitat"
+
+msgid "Gratte-ciel"
+msgstr "Wolkenkrabber"
+
+msgid "Quartier résidentiel"
+msgstr "Woonwijk"
+
+msgid "Lotissement/Cité"
+msgstr ""
+"T\n"
+"oewijzing"
+
+msgid "Habitat isolé"
+msgstr "Geïsoleerde Habitat"
+
+msgid "Maison/Villa"
+msgstr "Huis/Villa"
+
+msgid "Seigneurie/Maison de repos"
+msgstr "Rest huis/Verpleeghuis"
+
+msgid "Cité"
+msgstr "Stad"
+
+msgid "Monument classé"
+msgstr "Monument"
+
+msgid "Château"
+msgstr "Kasteel"
+
+msgid "Blockhaus"
+msgstr "Bunker"
+
+msgid "Rempart"
+msgstr "Ringmuur"
+
+msgid "Edifice religieux"
+msgstr "Religieus gebouw"
+
+msgid "Jardin"
+msgstr "Tuin"
+
+msgid "Parterre"
+msgstr "Parterre"
+
+msgid "Fort"
+msgstr "Fort"
+
+msgid "Citadelle"
+msgstr "Citadel"
+
+msgid "Douve"
+msgstr "Drainage"
+
+msgid "Palais"
+msgstr "Paleis"
+
+msgid "Patrimoine Mondial de l'UNESCO"
+msgstr "De UNESCO World Heritage"
+
+msgid "Commanderie"
+msgstr "Commanderij"
+
+msgid "Mausolée  nécropole"
+msgstr "Mausoleum necropolis"
+
+msgid "Mémorial /Monument aux morts"
+msgstr "Gedenkteken voor de dode/Monument"
+
+msgid "Monument historique"
+msgstr "Beschermd monument"
+
+msgid "Ruine"
+msgstr "Ruïne"
+
+msgid "Site archéologique"
+msgstr "Archeologische opgraving"
+
+msgid "Site antique"
+msgstr "Oude site"
+
+msgid "Site Romain"
+msgstr "Roman site"
+
+msgid "Statue /sculpture"
+msgstr "Beeld/Sculpture"
+
+msgid "Tour"
+msgstr "Tour"
+
+msgid "Histoire contemporaine"
+msgstr "Eigentijdse tijd"
+
+msgid "Pavillon"
+msgstr "Paviljoen"
+
+msgid "Carré"
+msgstr "Carré"
+
+msgid "Coeur"
+msgstr "Hart"
+
+msgid "Croix"
+msgstr "Kruis"
+
+msgid "Ligne"
+msgstr "Lijn"
+
+msgid "Rectangle"
+msgstr "Rechthoek"
+
+msgid "Rond/cercle"
+msgstr "Ronde/Cirkel"
+
+msgid "Triangle"
+msgstr "Driehoek"
+
+msgid "Zig-Zag/lacet"
+msgstr "Zig-Zag/Bochtige"
+
+msgid "Pentagone"
+msgstr "Pentagon"
+
+msgid "Etoile"
+msgstr "Ster"
+
+msgid "Courbe"
+msgstr "Kromme"
+
+msgid "Automne"
+msgstr "Vallen"
+
+msgid "Eté"
+msgstr "Zomer"
+
+msgid "Hiver"
+msgstr "Winter"
+
+msgid "Printemps"
+msgstr "Lente"
+
+msgid "Blanc"
+msgstr "Wit"
+
+msgid "Bleu"
+msgstr "Blauw"
+
+msgid "Jaune"
+msgstr "Geel"
+
+msgid "Multicolore"
+msgstr "Multicolor"
+
+msgid "Noir"
+msgstr "Zwart"
+
+msgid "Orange"
+msgstr "Orange"
+
+msgid "Rouge"
+msgstr "Rood"
+
+msgid "Vert"
+msgstr "Groen"
+
+msgid "Violet"
+msgstr "Violet"
+
+msgid "Centre commercial"
+msgstr "Winkelcentrum"
+
+msgid "Magasin"
+msgstr "Winkel"
+
+msgid "Foire"
+msgstr "Veelgestelde"
+
+msgid "Energie"
+msgstr "Energie"
+
+msgid "Agroalimentaire"
+msgstr "Voedingsmiddelenindustrie"
+
+msgid "Filière Bois"
+msgstr "Houtindustrie"
+
+msgid "Bâtiment et travaux publics"
+msgstr "Bouwnijverheid"
+
+msgid "Transport/Logistique"
+msgstr "Transport/logistiek"
+
+msgid "Aéronautique"
+msgstr "Luchtvaarttechniek"
+
+msgid "Pharmacie/Paramédical"
+msgstr "Apotheek/Paramedisch"
+
+msgid "Automobile"
+msgstr "automobiel"
+
+msgid "Construction mécanique"
+msgstr "Werktuigbouwkunde"
+
+msgid "Textile"
+msgstr "Textiel"
+
+msgid "Entreprise de service"
+msgstr "De dienstbedrijf"
+
+msgid "Centrale hydro-électrique"
+msgstr "Hydro-elektrische energie"
+
+msgid "Centrale nucléaire"
+msgstr "Kerncentrale"
+
+msgid "Centrale thermique"
+msgstr "Thermische centrale"
+
+msgid "Energie éolienne"
+msgstr "Windenergie"
+
+msgid "Energie solaire"
+msgstr "Zonne-energie"
+
+msgid "Hydrocarbure"
+msgstr "Koolwaterstof"
+
+msgid "Métallurgie"
+msgstr "Metallurgie"
+
+msgid "Chimie"
+msgstr "Scheikunde"
+
+msgid "Mine"
+msgstr "Mijn"
+
+msgid "Terril"
+msgstr "Steenberg"
+
+msgid "Usine"
+msgstr "Fabriek"
+
+msgid "Chantier de bâtiment"
+msgstr "Scheepswerf"
+
+msgid "Chantier d'infrastructure"
+msgstr "Aanleg van infrastructuur"
+
+msgid "Horticulture"
+msgstr "Tuinbouw"
+
+msgid "Culture sous serres"
+msgstr "Cultuur in kassen"
+
+msgid "Pépinière"
+msgstr "Kwekerij"
+
+msgid "Verger/Arbre fruitier"
+msgstr "Orchard/Fruitboom"
+
+msgid "Sylviculture"
+msgstr "Bosbouw"
+
+msgid "Culture en plein champ"
+msgstr "Cultuur op het gebied"
+
+msgid "Moisson"
+msgstr "Gewas"
+
+msgid "Labour"
+msgstr "Ploegen"
+
+msgid "Récolte"
+msgstr "Oogst"
+
+msgid "Prairie/Pâturage"
+msgstr "Weide/Grasland"
+
+msgid "Viticulture"
+msgstr "Wijnbouw"
+
+msgid "Vendange"
+msgstr "Oogst"
+
+msgid "Tracteur"
+msgstr "Trekker"
+
+msgid "Moissonneuse"
+msgstr "Harvester"
+
+msgid "Port de commerce"
+msgstr "Handelspost"
+
+msgid "Port de pêche"
+msgstr "Vissershaven"
+
+msgid "Port de plaisance"
+msgstr "Passantenhaven"
+
+msgid "Barge/Péniche"
+msgstr "Barge/Beunship"
+
+msgid "Bateau de commerce"
+msgstr "Handel boot"
+
+msgid "Bateau de pêche"
+msgstr "Vissersvaartuig"
+
+msgid "Bateau de plaisance"
+msgstr "Pleziervaartuigen"
+
+msgid "Ferry"
+msgstr "Veerboot"
+
+msgid "Paquebot"
+msgstr "Oceaanlijner"
+
+msgid "Epave"
+msgstr "Scheepswrak"
+
+msgid "Pétrolier"
+msgstr "Olietanker"
+
+msgid "Voilier"
+msgstr "Zeilschip"
+
+msgid "Port industriel"
+msgstr "Industriële haven"
+
+msgid "Navire de guerre"
+msgstr "Oorlogsschip"
+
+msgid "Route sineuse"
+msgstr "Sineuse weg"
+
+msgid "Virage"
+msgstr "Keren"
+
+msgid "Déforestation"
+msgstr "Ontbossing"
+
+msgid "Erosion"
+msgstr "Erosie"
+
+msgid "Incendie/Feu"
+msgstr "Brand/Vlammen"
+
+msgid "Inondation/Crue"
+msgstr "Overstroming/Overstroming"
+
+msgid "Pollution"
+msgstr "Verontreiniging"
+
+msgid "Faune d'élevage"
+msgstr "Fauna van vee"
+
+msgid "Faune sauvage"
+msgstr "Dieren in het wild"
+
+msgid "Décharge"
+msgstr "Ontlasting"
+
+msgid "Centre d'enfouissement des déchets"
+msgstr "Verwijdering van afval centrum"
+
+msgid "Station d'épuration"
+msgstr "Waterzuiveringsinstallatie"
+
+msgid "Incinérateur"
+msgstr "Afvalverbrandingsinstallatie"
+
+msgid "Opéra"
+msgstr "Opera"
+
+msgid "Cinéma"
+msgstr "Cinema"
+
+msgid "Théatre"
+msgstr "Theater"
+
+msgid "Abbaye"
+msgstr "abdij"
+
+msgid "Cathédrale"
+msgstr "Kathedraal"
+
+msgid "Chapelle"
+msgstr "Kapel"
+
+msgid "Clocher"
+msgstr "Klokkentoren"
+
+msgid "Couvent"
+msgstr "Convent"
+
+msgid "Eglise"
+msgstr "Kerk"
+
+msgid "Basilique"
+msgstr "Basiliek"
+
+msgid "Monastère"
+msgstr "Klooster"
+
+msgid "Mosquée"
+msgstr "Moskee"
+
+msgid "Minaret"
+msgstr "Minaret"
+
+msgid "Prieuré"
+msgstr "Priorij"
+
+msgid "Synagogue"
+msgstr "Synagoge"
+
+msgid "Temple"
+msgstr "Tempel"
+
+msgid "Cale sêche"
+msgstr "Houd droger"
+
+msgid "Citerne/Réservoir"
+msgstr "Cisterne/Tank"
+
+msgid "Zone industrielle"
+msgstr "Industriegebied"
+
+msgid "Logistique"
+msgstr "Logistiek"
+
+msgid "Concession automobile"
+msgstr "Autodealer"
+
+msgid "Maison Communale"
+msgstr "Gemeentehuis"
+
+msgid "Collégiale"
+msgstr "Kapittelkerk"
+
+msgid "Intercommunale"
+msgstr "Intercommunale"
+
+msgid "Usine de biométhanisation"
+msgstr "Spijsvertering plant"
+
+msgid "Parc à conteneurs"
+msgstr "Containerpark"
+
+msgid "Beffroi"
+msgstr "Belfort"
+
+msgid "Caserne Pompiers"
+msgstr "Brandweerkazerne"
+
+msgid "Traitement et valorisation"
+msgstr "Behandeling en herstel"
+
+msgid "Institution Européenne"
+msgstr "Europese instelling"
+
+msgid "Chantier de dépollution"
+msgstr "Bouw van verontreiniging"
+
+msgid "Site de versage"
+msgstr "Stortplaats"
+
+msgid "Services techniques"
+msgstr "Technische diensten"
+
+msgid "Palais de justice"
+msgstr "Gerechtsgebouw"
+
+msgid "Festival"
+msgstr "Festival"
+
+msgid "Bibliothèque"
+msgstr "Bibliotheek"
+
+msgid "Poste et télécommunications"
+msgstr "Post en telecommunicatie"
+
+msgid "Hôtel de Police"
+msgstr "Hotel de politie"
+
+msgid "Matériaux/Matériel (fabrication et commerce)"
+msgstr "Materialen/Apparatuur (productie en handel)"
+
+msgid "Production de bioéthanol"
+msgstr "Bio-ethanolproductie"
+
+msgid "Centrale Biomasse"
+msgstr "Plantaardige biomassa"
+
+msgid "Compostage"
+msgstr "Compostering"
+
+msgid "Gaz"
+msgstr "Gas"
+
+msgid "Pétrole"
+msgstr "Aardolie"
+
+msgid "Briqueterie"
+msgstr "Baksteen"

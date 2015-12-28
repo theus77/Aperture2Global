@@ -56,7 +56,7 @@ class DATABASE_CONFIG {
 	public $default = array(
 			'datasource' => 'Database/Sqlite',
 			'persistent' => false,
-			'database' => 'Database/apdb/Library.apdb',
+			'database' => 'data/masterdata.apdb',
 			'prefix' => '',
 			'encoding' => 'utf8',
 	);
@@ -79,7 +79,7 @@ class DATABASE_CONFIG {
 			'prefix' => '',
 			'encoding' => 'utf8',
 	);
-	
+
 	public $apertureProperties = array(
 			'datasource' => 'Database/Sqlite',
 			'persistent' => false,
@@ -87,8 +87,8 @@ class DATABASE_CONFIG {
 			'prefix' => '',
 			'encoding' => 'utf8',
 	);
-	
-	
+
+
 	public $apertureImageProxies = array(
 			'datasource' => 'Database/Sqlite',
 			'persistent' => false,
