@@ -217,9 +217,10 @@ class IndexShell extends AppShell {
 			if( strcmp($locality['types'][0], 'postal_code') == 0 ) {
 				$temp['level'] = self::ZIP;
 				$temp['geometry'] = $locations[self::CITY]['geometry'];
+				$temp['uuid'] = $locations[self::CITY]['uuid'];
 				$temp['name'] = $locality['address_components'][0]['long_name'];
 				foreach ($this->languages as $language){
-					$temp['name'.$language] = $temp['name'];
+					$temp['name_'.$language] = $temp['name'];
 				}
 				$locations[self::ZIP] = $temp;
 				$this->zipCodes[$locations[self::CITY]['modelId']] = $temp;
@@ -503,6 +504,7 @@ class IndexShell extends AppShell {
 					$temp = array(
 						'level' => $locationName['Place']['type'],
 						'modelId' => $locationName['Place']['modelId'],
+						'uuid' => $locationName['Place']['encodedUuid'],
 						'model' => 'aperture',
 						'name' => $locationName['Place']['defaultName'],
 					);
@@ -916,6 +918,10 @@ class IndexShell extends AppShell {
 												'index' => 'not_analyzed'
 										],
 										'name' => [
+												'type' => 'string',
+												'index' => 'not_analyzed'
+										],
+										'uuid' => [
 												'type' => 'string',
 												'index' => 'not_analyzed'
 										],
