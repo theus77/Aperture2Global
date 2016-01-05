@@ -3,8 +3,9 @@
 use Elasticsearch\Client;
 use Aws\S3\S3Client;
 use Aws\S3\Exception\S3Exception;
-use Aws\ElasticsearchService\ElasticsearchServiceClient;
 use Elasticsearch\ClientBuilder;
+use Aws\ElasticsearchService\ElasticsearchServiceClient;
+use Elasticsearch\Common\Exceptions\Forbidden403Exception;
 // Can be called by "Console/cake index"
 
 App::uses('Shell', 'Console');
@@ -12,6 +13,10 @@ App::uses('Shell', 'Console');
 App::import('Controller', 'Aperture');
 
 class IndexShell extends AppShell {
+	
+	const INDEX = 'aperture';
+	const ZIP = 15;
+	const CITY = 16;
 
 	private $properties = [
 			//'Byline',
@@ -39,8 +44,11 @@ class IndexShell extends AppShell {
 	private $s3;
 	private $keywords;
 	private $googleApiKey;
+	private $places;
+	private $locations;
+	private $zipCodes;
 
-	private function buildFindversionOptions(){
+	private function buildFindversionOptions($page){
 
 		return array(
 				// 				'limit' => 20,
@@ -56,12 +64,14 @@ class IndexShell extends AppShell {
 								'fields' => array('placeId')
 						),
 						'Keyword' => array(
-								'fields' =>  array('name', 'modelId'),
+								'fields' =>  array('name', 'modelId', 'encodedUuid'),
 								/*'conditions' => [
 										'placeId' => array_keys($this->keywords)
 									]/**/
 						)),
 				'order' => array('Version.imageDate DESC'),
+				'limit' => 100,
+				'page' => $page,
 				//'fields' => array('Version.imageDate', 'Version.encodedUuid', 'Version.name', 'Version.exifLatitude', 'Version.exifLongitude', 'Version.unixImageDate', 'Version.stackUuid'),
 				//'group' => array( 'Version.imageDate', 'Version.encodedUuid', 'Version.name', 'Version.exifLatitude', 'Version.exifLongitude', 'Version.unixImageDate', 'Version.stackUuid'),
 		);
@@ -114,14 +124,24 @@ class IndexShell extends AppShell {
 			return true;
 		}
 		else {
-			echo "file not found for uuid $uuid: $filePath \n";
+			//echo "file not found for uuid $uuid: $filePath \n";
 		}
 		return false;
 
 	}
 
-
 	private function getLocality($lat, $lng, $language){
+		$url = "http://nominatim.openstreetmap.org/reverse?format=json&lat=$lat&lon=$lng&zoom=18&addressdetails=1&accept-language=$language";
+		// get the json response
+		$resp_json = file_get_contents($url);
+		
+		var_dump(json_decode($resp_json));
+		exit;
+		
+		
+	}
+	
+	private function getLocalityGoogle($lat, $lng, $language){
 
 		$out = [
 			//'model_id' => $modelId,
@@ -129,9 +149,9 @@ class IndexShell extends AppShell {
 		];
 
 		// google map geocode api url
-		$url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&sensor=false&language=$language";
+		$url = "https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&sensor=false&language=$language&key=".$this->googleApiKey;
 
-
+		
 		//echo $url;
 		// get the json response
 		$resp_json = file_get_contents($url);
@@ -169,13 +189,70 @@ class IndexShell extends AppShell {
 			return $resp['results'];
 
 		}else{
+				var_dump($resp_json);
 				return false;
 		}
 	}
 
+	
+	
+	private function getZipCode($lat, $lng, &$locations) {
+		if( ! isset($this->zipCodes) ) {
+			$this->zipCodes = [];
+		}
+		
+		if(!isset($locations[self::CITY])){
+			return;
+		}
+		
+		if(isset($this->zipCodes[$locations[self::CITY]['modelId']])){
+			$locations[self::ZIP] = $this->zipCodes[$locations[self::CITY]['modelId']];
+			return;
+		}
+		
+		$localities = $this->getLocalityGoogle($lat, $lng, "en");
+		
+		
+		foreach ($localities as $locality) {
+			if( strcmp($locality['types'][0], 'postal_code') == 0 ) {
+				$temp['level'] = self::ZIP;
+				$temp['geometry'] = $locations[self::CITY]['geometry'];
+				$temp['name'] = $locality['address_components'][0]['long_name'];
+				foreach ($this->languages as $language){
+					$temp['name'.$language] = $temp['name'];
+				}
+				$locations[self::ZIP] = $temp;
+				$this->zipCodes[$locations[self::CITY]['modelId']] = $temp;
+				
+				break;
+			}
+		}
+		
+		
+// 		var_dump($locations);
+		
+// 		exit;
+		
+// 		if($locations[self::CITY]){
+		
+// 		$locations[$type]['modelId'];
+		
+
+		/*$localities = $this->getLocality($lat, $lng, $language);
+		
+		if($localities){
+			foreach ($localities as $locality) {
+				
+			}
+		}/**/
+	}
+	
 	private function addGoogleLocationsInformations($lat, $lng, &$locations) {
 		foreach ($this->languages as $language){
-			$localities = $this->getLocality($lat, $lng, $language);
+			$localities = $this->getLocalityGoogle($lat, $lng, $language);
+			
+//  			var_dump($localities);
+// 			exit;
 			if($localities){
 				foreach ($localities as $locality) {
 					$type = false;
@@ -194,6 +271,24 @@ class IndexShell extends AppShell {
 							break;
 						case 'neighborhood':
 							$type = 136;
+							break;
+						case 'airport':
+							$type = 84;
+							break;
+						case 'train_station':
+							$type = 83;
+							break;
+						case 'subway_station':
+							$type = 82;
+							break;
+						case 'bus_station':
+							$type = 81;
+							break;
+						case 'transit_station':
+							$type = 80;
+							break;
+						case 'sublocality_level_1':
+							$type = 60;
 							break;
 						case 'locality':
 							$type = 48;
@@ -223,7 +318,7 @@ class IndexShell extends AppShell {
 							break;
 						default:
 							echo "Unknowed locality level: ".$locality['types'][0]."\n";
-							var_dump($locality);
+							//var_dump($locality);
 							break;
 					}
 
@@ -235,14 +330,47 @@ class IndexShell extends AppShell {
 									'name' => $locality['address_components'][0]['long_name'],
 								);
 						}
-						$locations[$type]['placeId'] = $locality['place_id'];
+						$locations[$type]['modelId'] = $locality['place_id'];
+						$locations[$type]['model'] = 'google';
 						$locations[$type]['name_'.$language] = $locality['address_components'][0]['long_name'];
+						
+						$locations[$type]['geometry'] = [];
+						
+						$locations[$type]['geometry']['location'] = [
+												'lat' => $locality['geometry']['location']['lat'],
+												'lon' => $locality['geometry']['location']['lng'],
+										];
+						
+						if(isset($locality['geometry']['bounds']) 
+								&& $locality['geometry']['bounds']['northeast']['lat'] && $locality['geometry']['bounds']['northeast']['lng']
+								&& $locality['geometry']['bounds']['southwest']['lat'] && $locality['geometry']['bounds']['southwest']['lng']){
+							$locations[$type]['geometry']['bounds'] = [
+											'northeast' => [
+													'lat' => $locality['geometry']['bounds']['northeast']['lat'],
+													'lon' => $locality['geometry']['bounds']['northeast']['lng'],
+											],
+											'southwest' => [
+													'lat' => $locality['geometry']['bounds']['southwest']['lat'],
+													'lon' => $locality['geometry']['bounds']['southwest']['lng'],
+											],
+									];							
+						}
+						
+						
+						$this->updateLocation($locations[$type]);
 					}
 
 				}
 			}
 
 		}
+	}
+
+	private function updateLocation($locality){
+// 		if(!isset($this->locations[$locality['modelId']])){
+			$this->places[$locality['modelId']] = true;
+			$this->putObjectToElasticSearch($locality, "place", $locality['modelId']);
+// 		}
 	}
 
 	private function addCityInformations($modelId, $coordinates, &$data){
@@ -281,28 +409,41 @@ class IndexShell extends AppShell {
 		//exit;
 	}
 
-	public function updateVersionsInfo(){
-		$this->out('Indexing versions...');
+	public function updateVersionsInfo($page){
+		$this->out("Indexing versions page $page...");
 // 		$aperture = new ApertureConnectorAppController()rtureController();
 // 		$aperture->constructClasses(); //I needed this in here for more complicated requiring component loads etc in the Controller
 
 // 		$findversionOptions = $aperture->buildFindversionOptions();
 
-		$findversionOptions = $this->buildFindversionOptions();
+		$findversionOptions = $this->buildFindversionOptions($page);
+		
+		$placesFound = array();
 
 
 		$versions = $this->Version->find('all', $findversionOptions);
 		foreach ($versions as $version){
-
+			$data = [];
+			$this->out($version['Version']['name'].': '.$version['Version']['modelId']);
 			$data['uuid'] = $version['Version']['encodedUuid'];
 			$data['name'] = $version['Version']['name'];
 			$data['date'] = $version['Version']['unixImageDate'];
 			$data['width'] = $version['Version']['masterWidth'];
 			$data['height'] = $version['Version']['masterHeight'];
-			$data['location'] = array(
-					'lat' => $version['Version']['exifLatitude'],
-					'lon' => $version['Version']['exifLongitude']
-			);
+			$data['rating'] = $version['Version']['mainRating'];
+			$data['lastUpdateDate'] = date('Y-m-d\TH:i:s');
+			//yyyy-MM-dd’T'HH:mm:ss.SSSZZ
+			
+			if(!is_null($version['Version']['exifLatitude']) && !is_null($version['Version']['exifLongitude'])){
+				$data['location'] = array(
+						'lat' => $version['Version']['exifLatitude'],
+						'lon' => $version['Version']['exifLongitude']
+				);
+			}
+			else {
+
+				$this->err("Location missing");
+			}
 			$data['repository_path'] = APP;
 
 
@@ -357,12 +498,45 @@ class IndexShell extends AppShell {
 					/*if($locationName['Place']['type'] == 16){
 							$this->addCityInformations($locationName['Place']['modelId'], $locationName['Place']['centroid'], $data);
 					}*/
+					
 
 					$temp = array(
-						'level' => 3*$locationName['Place']['type'],
+						'level' => $locationName['Place']['type'],
 						'modelId' => $locationName['Place']['modelId'],
+						'model' => 'aperture',
 						'name' => $locationName['Place']['defaultName'],
 					);
+					
+					
+					$splited = preg_split("/[\{,\s\}]+/", $locationName['Place']['centroid']);
+					
+					if(count($splited) == 4){
+						$lng = $splited[1];
+						$lat = $splited[2];
+					}
+					else {
+						$lng = $splited[0];
+						$lat = $splited[1];
+					}
+					
+					$temp['geometry'] = [
+							'bounds' => [
+									'northeast' => [
+											'lat' => $locationName['Place']['maxLatitude'],
+											'lon' => $locationName['Place']['maxLongitude'],
+									],
+									'southwest' => [
+											'lat' => $locationName['Place']['minLatitude'],
+											'lon' => $locationName['Place']['minLongitude'],
+									]
+							],
+							'location' => [
+									'lat' => $lat,
+									'lon' => $lng,
+							]
+					];
+					
+					
 
 					switch ($locationName['Place']['type']) {
 						case 1:
@@ -374,7 +548,7 @@ class IndexShell extends AppShell {
 						case 4:
 							$temp['type'] = 'department';
 							break;
-						case 16:
+						case self::CITY:
 							$temp['type'] = 'city';
 							break;
 						case 43:
@@ -401,18 +575,33 @@ class IndexShell extends AppShell {
 							$temp['name_'.$placeName['language']] = $placeName['description'];
 						}
 					}
+					foreach ($this->languages as $language){
+						if(!isset($temp['name_'.$language])){
+							$temp['name_'.$language] = $temp['name'];
+						}
+						
+					}
+					
 					$locations[$temp['level']] = $temp;
-
+					
+					$this->updatePlace($locationName, $temp['type'], $temp['level']);
 				}
 			}
 
-			$this->addGoogleLocationsInformations( $version['Version']['exifLatitude'], $version['Version']['exifLongitude'], $locations);
+			if(isset($data['location'])){
+				$this->getZipCode($version['Version']['exifLatitude'], $version['Version']['exifLongitude'], $locations);
+				//$this->addGoogleLocationsInformations( $version['Version']['exifLatitude'], $version['Version']['exifLongitude'], $locations);				
+			}
 
-			$data['locations'] = 	$locations;
+// 			var_dump($locations);
+// 			exit;
+			
+			$data['locations'] = array_values($locations);
 			//'http://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&sensor=false';
 
 
 			$data['Keywords'] = array();
+			$keywordAdded = [];
 			foreach($version['Keyword'] as $keyword){
 
 
@@ -422,11 +611,13 @@ class IndexShell extends AppShell {
 
 				if( array_key_exists( $keyword['modelId'], $this->keywords) ){
 					$currentId = $keyword['modelId'];
+					$encodedUuid = $keyword['encodedUuid'];
 					while ($currentId > 0) {
 						//echo "$currentId\n";
 						$data['Keywords'][] =  $this->translateKeyword($this->keywords[$currentId]);
-						$currentId = $this->keywords[$currentId]['parentId'];
-						if( ! array_key_exists( $currentId, $this->keywords) ){
+						$keywordAdded[] = $currentId;
+ 						$currentId = $this->keywords[$currentId]['parentId'];
+						if( ! array_key_exists( $currentId, $this->keywords) || in_array($currentId, $keywordAdded)){
 							break;
 						}
 					}
@@ -450,29 +641,85 @@ class IndexShell extends AppShell {
 			}
 
 			//json_encode($data);
+			
+			//var_dump($data);
 
 			$this->putObjectToElasticSearch($data, "version", $version['Version']['encodedUuid']);
 
 			//$this->out($data);
-			break;
+			//break;
 		}
 
-
+		return count($versions);
 
 	}
 
+	
+	private function updatePlace($place, $type, $level){
+		if(!isset($this->places[$place['Place']['modelId']])){
+			$this->places[$place['Place']['modelId']] = true;
+			
+			$data = [
+				'name' => $place['Place']['defaultName'],
+				'model_id' => $place['Place']['modelId'],
+				'type' => $type,
+				'level' => $level,
+			];
+			
+			foreach ($place['PlaceName'] as $placeName){
+				if(in_array($placeName['language'], $this->languages)){
+					$data['name_'.$placeName['language']] = $placeName['description'];
+				}
+			}
+			//var_dump($place['Place']['defaultName']);
+			//var_dump($place['Place']['centroid']);
+			//var_dump(preg_split("/[\{,\s\}]+/", $place['Place']['centroid']));
+			//exit;
+			$splited = preg_split("/[\{,\s\}]+/", $place['Place']['centroid']);
+			
+			if(count($splited) == 4){
+				$lng = $splited[1];
+				$lat = $splited[2];
+			}
+			else {
+				$lng = $splited[0];
+				$lat = $splited[1];
+			}
+			
+			
+			$data['geometry'] = [
+					'bounds' => [
+							'northeast' => [
+									'lat' => $place['Place']['maxLatitude'],
+									'lng' => $place['Place']['maxLongitude'],
+							],
+							'southwest' => [
+									'lat' => $place['Place']['minLatitude'],
+									'lng' => $place['Place']['minLongitude'],
+							]
+					],
+					'location' => [
+							'lat' => $lat,
+							'lng' => $lng,
+					]
+			];
+			
+			$this->putObjectToElasticSearch($data, "place", $place['Place']['uuid']);
+			
+		}
+	}
 
 	private function translateKeyword($keyword){
 		$out = [
 			'id' => $keyword['modelId'],
+			'uuid' => $keyword['encodedUuid'],
 			'name' => $keyword['name']
 		];
-		echo $keyword['name']."\n";
+		
 		foreach ($this->languages as $language){
-			Configure::write('Config.language', $language);
-			echo "   -$language: ".__($keyword['name'])."\n";
-			$out['name_'.$language] = I18n::translate($keyword['name'], null, null, I18n::LC_MESSAGES, null, $language, null);
+			$out['name_'.$language] = I18n::translate(Normalizer::normalize($keyword['name']), null, null, I18n::LC_MESSAGES, null, $language, null);
 		}
+				
 		return $out;
 	}
 
@@ -508,6 +755,20 @@ class IndexShell extends AppShell {
 				fwrite($fh, "#: ".$keyword['modelId']."\n");
 		    fwrite($fh, "msgid \"$key\"\n");
 		    fwrite($fh, "msgstr \"\"\n");
+		    
+		    
+		    $keyword = [
+		    		'modelId' => $keyword['modelId'],
+		    		'name' => $keyword['name'],
+		    		'uuid' => $keyword['encodedUuid'],
+		    ];
+		    
+		    	
+		    foreach ($this->languages as $language){
+		    	$keyword['name_'.$language] = I18n::translate(Normalizer::normalize($keyword['name']), null, null, I18n::LC_MESSAGES, null, $language, null);
+		    }
+		    
+		    $this->putObjectToElasticSearch($keyword, 'keyword', $keyword['uuid']);
 		}
 
 		fwrite($fh, "\n");
@@ -521,7 +782,7 @@ class IndexShell extends AppShell {
 
 	private function getAllSubKeywords($keywordId){
 		$findOptions = array(
-				'fields' => array('name', 'parentId', 'modelId'),
+				'fields' => array('name', 'parentId', 'modelId', 'encodedUuid'),
 				'conditions' => array(
 						'parentid' => array($keywordId)
 				)
@@ -543,6 +804,7 @@ class IndexShell extends AppShell {
 				$found = true;
 				$findOptions['conditions']['parentid'][] = $keyword['Keyword']['modelId'];
 				$keywords[$keyword['Keyword']['modelId']] = $keyword['Keyword'];
+				
 				if(isset($nameIndex[$keyword['Keyword']['name']])){
 					//echo "found dup: ".$keyword['Keyword']['name'];
 					$parent = $keywords[$keyword['Keyword']['parentId']];
@@ -581,8 +843,8 @@ class IndexShell extends AppShell {
 // 		$client = new Client();
 
 		$params = [
-				'index' => 'index',
-				'type' => 'version',
+				'index' => self::INDEX,
+				'type' => $type,
 				'id' => $id,
 				'body' => $data
 		];
@@ -615,27 +877,249 @@ class IndexShell extends AppShell {
 		curl_close($ch);*/
 	}
 
+	
+	private function initIndex(){
+		$version =[
+				'properties' => [
+						'Stack' => [
+								'type' => 'string',
+								'index' => 'not_analyzed'
+						],
+						'height' => [
+								'type' => 'integer',
+								'index' => 'not_analyzed'
+						],
+						'rating' => [
+								'type' => 'integer'
+						],
+						'width' => [
+								'type' => 'integer',
+								'index' => 'not_analyzed'
+						],
+						'lastUpdateDate' => [
+								'type' => 'date',
+// 								'format' => 'date_hour_minute_second'
+						],
+						'location' => [
+								'type' => 'geo_point',
+								'lat_lon' => true,
+								"fielddata" => [
+										"format" => "compressed",
+										"precision" => "1m"
+								]
+						],
+						'Keywords' => [
+								'type' => 'nested',
+								'properties' => [
+										'id' => [
+												'type' => 'long',
+												'index' => 'not_analyzed'
+										],
+										'name' => [
+												'type' => 'string',
+												'index' => 'not_analyzed'
+										],
+										'name_en' => [
+												'type' => 'string',
+												'analyzer' => 'english',
+												'fields' => [
+													'raw' => [
+														'type' => 'string',
+														'index' => 'not_analyzed',	
+													]
+												]
+										],
+										'name_fr' => [
+												'type' => 'string',
+												'analyzer' => 'french',
+												'fields' => [
+													'raw' => [
+														'type' => 'string',
+														'index' => 'not_analyzed',	
+													]
+												]
+										],
+										'name_nl' => [
+												'type' => 'string',
+												'analyzer' => 'dutch',
+												'fields' => [
+													'raw' => [
+														'type' => 'string',
+														'index' => 'not_analyzed',	
+													]
+												]
+										]
+								]
+						],
+						'locations' => [
+								'type' => 'nested',
+								'properties' => [
+										'level' => [
+												'type' => 'integer',
+												'index' => 'not_analyzed'
+										],
+										'modelId' => [
+												'type' => 'string',
+												'index' => 'not_analyzed'
+										],
+										'model' => [
+												'type' => 'string',
+												'index' => 'not_analyzed'
+										],
+										'name' => [
+												'type' => 'string',
+												'index' => 'not_analyzed'
+										],
+										'name_en' => [
+												'type' => 'string',
+												'analyzer' => 'english'
+										],
+										'name_fr' => [
+												'type' => 'string',
+												'analyzer' => 'french'
+										],
+										'name_nl' => [
+												'type' => 'string',
+												'analyzer' => 'dutch'
+										],
+										'geometry' => [
+											'properties'=> [
+												'bounds' => [
+														'properties' => [
+															'northeast' => [
+																'type' => 'geo_point',
+																'lat_lon' => true,
+																"fielddata" => [
+																		"format" => "compressed",
+																		"precision" => "1m"
+																]
+															],
+															'southwest' => [
+																'type' => 'geo_point',
+																'lat_lon' => true,
+																"fielddata" => [
+																		"format" => "compressed",
+																		"precision" => "1m"
+																]
+															]
+														]
+												],
+												'location' => [
+													'type' => 'geo_point',
+													'lat_lon' => true,
+													"fielddata" => [
+															"format" => "compressed",
+															"precision" => "1m"
+													]
+												]
+											]
+										]
+								]
+						],
+				]
+		];
+		$this->client->indices()->create(['index' => self::INDEX]);
+		
+		$this->client->indices()->putMapping([
+				'index' => self::INDEX,
+				'type' => 'version',
+				'body' => [
+						'version' =>$version
+				]
+		]);/**/
+		
+	}
 
+	
+	
+	private function allowAccessToES(){
+		
+
+		$this->out("Checking IP....");
+		
+		$externalContent = file_get_contents('http://checkip.dyndns.com/');
+		preg_match('/Current IP Address: \[?([:.0-9a-fA-F]+)\]?/', $externalContent, $m);
+		$externalIp = $m[1];
+
+
+		$this->out("Check ES allow access to IP: $externalIp");
+		
+		
+		$client  = new ElasticsearchServiceClient(Configure::read('awsClientConfig'));
+		
+		$config = $client->updateElasticsearchDomainConfig([
+				'DomainName' => Configure::read('awsESDomainName'),
+		]);
+		
+		$accessPolicies = json_decode($config['DomainConfig']['AccessPolicies']['Options'], true);
+		
+// 		var_dump($accessPolicies);
+
+		foreach ($accessPolicies['Statement'] as $statement){
+			if( isset($statement['Condition']) && 
+					isset($statement['Condition']['IpAddress']) && 
+					isset($statement['Condition']['IpAddress']['aws:SourceIp']) && 
+					strcmp($statement['Condition']['IpAddress']['aws:SourceIp'], $externalIp) == 0 ){
+				$this->out("$externalIp has already access");
+				return;
+			}
+		}
+		
+		$accessPolicies['Statement'][] = [
+				'Sid' => '',
+				'Effect' => 'Allow',
+				'Principal' => [ 'AWS' => '*' ],
+				'Action' => 'es:*',
+				'Condition' => ['IpAddress' => [ 'aws:SourceIp' => [$externalIp]]],
+				'Resource' => $accessPolicies['Statement'][0]['Resource'],
+				
+		];
+		
+		$config = $client->updateElasticsearchDomainConfig([
+				'DomainName' => Configure::read('awsESDomainName'),
+				'AccessPolicies' => json_encode($accessPolicies),
+		]);
+		
+		$this->out("Access policies updated");
+		
+
+	}
+	
 	public function main() {
-
-
-		/*$amazones = new ElasticsearchServiceClient([
-				'version' => 'latest',
-				'region'  => 'us-west-2'
-		]);*/
-
-		//$hosts = ['https://search-globalview-64tdo3cxwpdh5vwkwlerhgac2e.us-west-2.es.amazonaws.com:443/'];
-
-
+		
+		$this->allowAccessToES();
+		
 		$this->client = ClientBuilder::create()           // Instantiate a new ClientBuilder
-// 			->setHosts(Configure::read('awsESHosts'))      // Set the hosts
+			->setHosts(Configure::read('awsESHosts'))      // Set the hosts
 			->build();              // Build the client object
 
 		//$this->client = new Client();
 
 		$this->languages = Configure::read('languages');
 		$this->googleApiKey = Configure::read('googleApiKey');
+		$this->places = [];
+		$this->locations = [];
+		
 
+		Configure::write('Config.language', "fr");
+		
+		
+		while(true) {
+			try {			
+				$this->client->indices()->exists(['index' => self::INDEX]);
+			}
+			catch (Forbidden403Exception $e) {
+				$this->out("Access forbidden to ES, try again in 3 minutes ...");
+				sleep(180);
+				continue;
+			}
+			break;
+		}
+		
+		if(!$this->client->indices()->exists(['index' => self::INDEX])){
+			$this->initIndex();
+		}		
+		
 
 		$this->keywords = $this->getKeywords();
 
@@ -643,16 +1127,20 @@ class IndexShell extends AppShell {
 
 		//exit();
 
-		$this->s3 = new S3Client([
-				'version' => 'latest',
-				'region'  => 'eu-central-1'
-		]);
+		$this->s3 = new S3Client(Configure::read('awsClientConfig'));
+
+		
 
 
+		
+		
 		//echo __('Bâtiment');
-		$params = ['index' => 'index'];
-		//$response = $this->client->indices()->delete($params);
-		//$exit;
+// 		$params = ['index' => self::INDEX];
+		//$response = $this->client->indices()->delete(['index' => self::INDEX]);
+
+		
+		//$exit;,
+		
 
 // 		$result = $this->s3->listBuckets();
 
@@ -660,7 +1148,38 @@ class IndexShell extends AppShell {
 // 			echo $bucket['Name'] . "\n";
 // 		}
 
+		
+		
+		
+//exit;
 		$this->out('Start indexing series');
-		$this->updateVersionsInfo();
+		
+		$page = 0;
+		while($this->updateVersionsInfo($page++));
+		
+		
+		
+		//$mapping['index']['mappings']['version']['properties']['Keywords']['properties']['name_en']['analyzer'] = 'english';
+		//$mapping['index']['mappings']['version']['properties']['Keywords']['properties']['name_fr']['analyzer'] = 'french';
+		
+		/*$this->client->indices()->putMapping([
+				'index' => 'index', 
+				'type' => 'version', 
+				'body' => [
+						'version' => [
+								'properties' => [
+										'Keywords' => [
+												'name_en' => [
+													'type' => 'string',
+													'analyzer' => 'english'
+												]
+										]
+								]
+						]
+				]
+		]);*/
+
+		
+		
 	}
 }

@@ -1,0 +1,7 @@
+Google Maps Geocoding: 
+	https://developers.google.com/maps/documentation/geocoding/intro#ReverseGeocoding
+	https://www.codeofaninja.com/2014/06/google-maps-geocoding-example-php.html
+	
+	
+Elasticsearch	
+	retour experience: http://tekcollab.imdeo.com/astuces-et-retour-dexperience-sur-elasticsearch/

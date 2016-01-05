@@ -110,10 +110,15 @@ CakeLog::config('error', array(
 
 CakePlugin::load('ApertureConnector', array('bootstrap' => false, 'routes' => true));
 
-Configure::write('awsESHosts', ['https://search-globalview-64tdo3cxwpdh5vwkwlerhgac2e.us-west-2.es.amazonaws.com:443/']);
+Configure::write('awsESHosts', ['https://search-aperture-es-aiqcbttcloqndmfiagwvbu5nfu.eu-central-1.es.amazonaws.com:443/']);
+
+Configure::write('awsESDomainName', 'aperture-es');
+
+Configure::write('awsClientConfig', [
+				'version' => 'latest',
+				'region'  => 'eu-central-1'
+		]);
 
 Configure::write('languages', ['fr','nl','en']);
 
 Configure::write('rootKeywordName', '1-PHOTOTHEQUE');
-
-Configure::write('googleApiKey', 'AIzaSyDqvofVJSIZXBfqxaLw9GNHc9cOBgdMlH8');

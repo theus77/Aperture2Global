@@ -58,7 +58,7 @@ class DATABASE_CONFIG {
 			'persistent' => false,
 			'database' => 'data/masterdata.apdb',
 			'prefix' => '',
-			'encoding' => 'utf8',
+			'encoding' => 'UTF-8',
 	);
 
 // 	public $test = array(
@@ -77,7 +77,7 @@ class DATABASE_CONFIG {
 			'persistent' => false,
 			'database' => 'Database/apdb/Library.apdb',
 			'prefix' => '',
-			'encoding' => 'utf8',
+			'encoding' => 'UTF-8',
 	);
 
 	public $apertureProperties = array(
@@ -85,7 +85,7 @@ class DATABASE_CONFIG {
 			'persistent' => false,
 			'database' => 'Database/apdb/Properties.apdb',
 			'prefix' => '',
-			'encoding' => 'utf8',
+			'encoding' => 'UTF-8',
 	);
 
 
@@ -94,6 +94,6 @@ class DATABASE_CONFIG {
 			'persistent' => false,
 			'database' => 'Database/apdb/ImageProxies.apdb',
 			'prefix' => '',
-			'encoding' => 'utf8',
+			'encoding' => 'UTF-8',
 	);
 }

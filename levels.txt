@@ -11,6 +11,11 @@
 45: postal_code
 47: locality
 48: city
+60: sublocality_level_1
+80: transit_station
+81: bus_station
+82: subway_station
+83: airport
 129: town
 132: sea
 135: neighborhood_1
