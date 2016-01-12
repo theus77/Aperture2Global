@@ -878,7 +878,7 @@ msgid "Pharmacie/Paramédical"
 msgstr "Apotheek/Paramedisch"
 
 msgid "Automobile"
-msgstr "automobiel"
+msgstr "Automobiel"
 
 msgid "Construction mécanique"
 msgstr "Werktuigbouwkunde"
@@ -1061,7 +1061,7 @@ msgid "Théatre"
 msgstr "Theater"
 
 msgid "Abbaye"
-msgstr "abdij"
+msgstr "Abdij"
 
 msgid "Cathédrale"
 msgstr "Kathedraal"

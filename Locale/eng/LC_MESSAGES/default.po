@@ -503,7 +503,7 @@ msgstr "Countryside"
 
 #: 11018
 msgid "Paysage industriel"
-msgstr "industrial landscape"
+msgstr "Industrial landscape"
 
 #: 11019
 msgid "Paysage urbain"

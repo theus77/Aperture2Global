@@ -1,0 +1,199 @@
+{
+  "aperture": {
+    "mappings": {
+      "version": {
+        "properties": {
+          "uuid": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "artist": {
+            "type": "string"
+          },
+          "aspect_ratio": {
+            "type": "string"
+          },
+          "copyright": {
+            "type": "string"
+          },
+          "copyright_notice": {
+            "type": "string"
+          },
+          "date": {
+            "type": "date"
+          },
+          "email": {
+            "type": "string"
+          },
+          "height": {
+            "type": "integer"
+          },
+          "label": {
+            "type": "string"
+          },
+          "lastUpdateDate": {
+            "type": "date",
+            "format": "dateOptionalTime"
+          },
+          "lens_model": {
+            "type": "string"
+          },
+          "location": {
+            "type": "geo_point",
+            "fielddata": {
+              "format": "compressed",
+              "precision": "1m"
+            },
+            "lat_lon": true
+          },
+          "master_location": {
+            "type": "string"
+          },
+          "model": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "pixel_size": {
+            "type": "string"
+          },
+          "project_name": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer"
+          },
+          "repository_path": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "usage_conditon": {
+            "type": "string"
+          },
+          "user_comment": {
+            "type": "string"
+          },
+          "width": {
+            "type": "integer"
+          },
+          "Keywords": {
+            "type": "nested",
+            "properties": {
+              "id": {
+                "type": "long",
+                "index": "not_analyzed"
+              },
+              "uuid": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name_en": {
+                "type": "string",
+                "analyzer": "english",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "name_fr": {
+                "type": "string",
+                "analyzer": "french",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              },
+              "name_nl": {
+                "type": "string",
+                "analyzer": "dutch",
+                "fields": {
+                  "raw": {
+                    "type": "string",
+                    "index": "not_analyzed"
+                  }
+                }
+              }
+            }
+          },
+          "Stack": {
+            "type": "string",
+            "index": "not_analyzed"
+          },
+          "locations": {
+            "type": "nested",
+            "properties": {
+              "northeast": {
+                "type": "geo_point",
+                "fielddata": {
+                  "format": "compressed",
+                  "precision": "1m"
+                },
+                "lat_lon": true
+              },
+              "southwest": {
+                "type": "geo_point",
+                "fielddata": {
+                  "format": "compressed",
+                  "precision": "1m"
+                },
+                "lat_lon": true
+              },
+              "location": {
+                "type": "geo_point",
+                "fielddata": {
+                  "format": "compressed",
+                  "precision": "1m"
+                },
+                "lat_lon": true
+              },
+              "level": {
+                "type": "integer"
+              },
+              "model": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "modelId": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "name_en": {
+                "type": "string",
+                "analyzer": "english"
+              },
+              "name_fr": {
+                "type": "string",
+                "analyzer": "french"
+              },
+              "name_nl": {
+                "type": "string",
+                "analyzer": "dutch"
+              },
+              "type": {
+                "type": "string",
+                "index": "not_analyzed"
+              },
+              "uuid": {
+                "type": "string",
+                "index": "not_analyzed"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

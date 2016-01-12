@@ -95,7 +95,7 @@ class IndexShell extends AppShell {
 
 	private function putToS3($uuid, $encodedUuid){
 
-		return true;
+// 		return true;
 		$imageProxy = $this->ImageProxyState->findByVersionuuid($uuid);
 
 		$filePath = APP."Thumbnails".DS.$imageProxy['ImageProxyState']['thumbnailPath'];
@@ -106,12 +106,13 @@ class IndexShell extends AppShell {
 				$result = $this->s3->headObject([
 						'Bucket' => 'global-previews',
 						'Key'    => $encodedUuid
-				]);/**/
+				]);
 			} catch (S3Exception $e) {
+				//var_dump($e); exit;
+// 				$this->out($e->getMessage());
+// 				$this->out("Access denied to the S3 bucket 113");
 				$result = false;
 			}
-
-
 
 			if(!$result || $result->get('ContentLength') != filesize( $filePath )){
 				echo "Put $encodedUuid\n";
@@ -124,8 +125,17 @@ class IndexShell extends AppShell {
 			return true;
 		}
 		else {
-			//echo "file not found for uuid $uuid: $filePath \n";
+			try {
+				$result = $this->s3->headObject([
+						'Bucket' => 'global-previews',
+						'Key'    => $encodedUuid
+				]);
+				$this->out("file not found for uuid $uuid: $filePath, we asume that the file is up to date");
+				return true;
+			} catch (S3Exception $e) {
+			}
 		}
+		$this->out("file not found for uuid $uuid: $filePath and also missing on S3");
 		return false;
 
 	}
@@ -216,7 +226,10 @@ class IndexShell extends AppShell {
 		foreach ($localities as $locality) {
 			if( strcmp($locality['types'][0], 'postal_code') == 0 ) {
 				$temp['level'] = self::ZIP;
-				$temp['geometry'] = $locations[self::CITY]['geometry'];
+
+				$temp['southwest'] = $locations[self::CITY]['southwest'];
+				$temp['northeast'] = $locations[self::CITY]['northeast'];
+				$temp['location'] = $locations[self::CITY]['location'];
 				$temp['uuid'] = $locations[self::CITY]['uuid'];
 				$temp['name'] = $locality['address_components'][0]['long_name'];
 				foreach ($this->languages as $language){
@@ -505,7 +518,7 @@ class IndexShell extends AppShell {
 						'level' => $locationName['Place']['type'],
 						'modelId' => $locationName['Place']['modelId'],
 						'uuid' => $locationName['Place']['encodedUuid'],
-						'model' => 'aperture',
+// 						'model' => 'aperture',
 						'name' => $locationName['Place']['defaultName'],
 					);
 					
@@ -521,24 +534,21 @@ class IndexShell extends AppShell {
 						$lat = $splited[1];
 					}
 					
-					$temp['geometry'] = [
-							'bounds' => [
-									'northeast' => [
-											'lat' => $locationName['Place']['maxLatitude'],
-											'lon' => $locationName['Place']['maxLongitude'],
-									],
-									'southwest' => [
-											'lat' => $locationName['Place']['minLatitude'],
-											'lon' => $locationName['Place']['minLongitude'],
-									]
-							],
-							'location' => [
-									'lat' => $lat,
-									'lon' => $lng,
-							]
+					
+
+					$temp['northeast'] = [
+						'lat' => $locationName['Place']['maxLatitude'],
+						'lon' => $locationName['Place']['maxLongitude'],
 					];
-					
-					
+					$temp['southwest'] = [
+						'lat' => $locationName['Place']['minLatitude'],
+						'lon' => $locationName['Place']['minLongitude'],
+					];
+					$temp['location'] = [
+						'lat' => $lat,
+						'lon' => $lng,
+					];
+						
 
 					switch ($locationName['Place']['type']) {
 						case 1:
@@ -629,7 +639,7 @@ class IndexShell extends AppShell {
 
 			$data['Stack'] = array();
 			if($version['Version']['stackUuid']) {
-				$stackVersions = $this->Version->findAllByStackuuid($version['Version']['stackUuid'], array('uuid', 'encodedUuid', 'name', 'unixImageDate'), array('unixImageDate'));
+				$stackVersions = $this->Version->findAllByStackuuid($version['Version']['stackUuid'], array('uuid', 'encodedUuid'), array('unixImageDate'));
 				foreach($stackVersions as $stackVersion){
 					if($this->putToS3($stackVersion['Version']['uuid'], $stackVersion['Version']['encodedUuid'])){
 						$data['Stack'][] = $stackVersion['Version']['encodedUuid'];
@@ -666,6 +676,7 @@ class IndexShell extends AppShell {
 				'model_id' => $place['Place']['modelId'],
 				'type' => $type,
 				'level' => $level,
+				'uuid' => $place['Place']['encodedUuid'],
 			];
 			
 			foreach ($place['PlaceName'] as $placeName){
@@ -706,7 +717,7 @@ class IndexShell extends AppShell {
 					]
 			];
 			
-			$this->putObjectToElasticSearch($data, "place", $place['Place']['uuid']);
+			$this->putObjectToElasticSearch($data, "place", $place['Place']['encodedUuid']);
 			
 		}
 	}
@@ -881,166 +892,27 @@ class IndexShell extends AppShell {
 
 	
 	private function initIndex(){
-		$version =[
-				'properties' => [
-						'Stack' => [
-								'type' => 'string',
-								'index' => 'not_analyzed'
-						],
-						'height' => [
-								'type' => 'integer',
-								'index' => 'not_analyzed'
-						],
-						'rating' => [
-								'type' => 'integer'
-						],
-						'width' => [
-								'type' => 'integer',
-								'index' => 'not_analyzed'
-						],
-						'lastUpdateDate' => [
-								'type' => 'date',
-// 								'format' => 'date_hour_minute_second'
-						],
-						'location' => [
-								'type' => 'geo_point',
-								'lat_lon' => true,
-								"fielddata" => [
-										"format" => "compressed",
-										"precision" => "1m"
-								]
-						],
-						'Keywords' => [
-								'type' => 'nested',
-								'properties' => [
-										'id' => [
-												'type' => 'long',
-												'index' => 'not_analyzed'
-										],
-										'name' => [
-												'type' => 'string',
-												'index' => 'not_analyzed'
-										],
-										'uuid' => [
-												'type' => 'string',
-												'index' => 'not_analyzed'
-										],
-										'name_en' => [
-												'type' => 'string',
-												'analyzer' => 'english',
-												'fields' => [
-													'raw' => [
-														'type' => 'string',
-														'index' => 'not_analyzed',	
-													]
-												]
-										],
-										'name_fr' => [
-												'type' => 'string',
-												'analyzer' => 'french',
-												'fields' => [
-													'raw' => [
-														'type' => 'string',
-														'index' => 'not_analyzed',	
-													]
-												]
-										],
-										'name_nl' => [
-												'type' => 'string',
-												'analyzer' => 'dutch',
-												'fields' => [
-													'raw' => [
-														'type' => 'string',
-														'index' => 'not_analyzed',	
-													]
-												]
-										]
-								]
-						],
-						'locations' => [
-								'type' => 'nested',
-								'properties' => [
-										'level' => [
-												'type' => 'integer',
-												'index' => 'not_analyzed'
-										],
-										'modelId' => [
-												'type' => 'string',
-												'index' => 'not_analyzed'
-										],
-										'model' => [
-												'type' => 'string',
-												'index' => 'not_analyzed'
-										],
-										'name' => [
-												'type' => 'string',
-												'index' => 'not_analyzed'
-										],
-										'name_en' => [
-												'type' => 'string',
-												'analyzer' => 'english'
-										],
-										'name_fr' => [
-												'type' => 'string',
-												'analyzer' => 'french'
-										],
-										'name_nl' => [
-												'type' => 'string',
-												'analyzer' => 'dutch'
-										],
-										'geometry' => [
-											'properties'=> [
-												'bounds' => [
-														'properties' => [
-															'northeast' => [
-																'type' => 'geo_point',
-																'lat_lon' => true,
-																"fielddata" => [
-																		"format" => "compressed",
-																		"precision" => "1m"
-																]
-															],
-															'southwest' => [
-																'type' => 'geo_point',
-																'lat_lon' => true,
-																"fielddata" => [
-																		"format" => "compressed",
-																		"precision" => "1m"
-																]
-															]
-														]
-												],
-												'location' => [
-													'type' => 'geo_point',
-													'lat_lon' => true,
-													"fielddata" => [
-															"format" => "compressed",
-															"precision" => "1m"
-													]
-												]
-											]
-										]
-								]
-						],
-				]
-		];
-		$this->client->indices()->create(['index' => self::INDEX]);
+		$version = json_decode(file_get_contents('mapping.json'), true);
+		
+		$this->client->indices()->create(['index' => self::INDEX.'_v1']);
 		
 		$this->client->indices()->putMapping([
-				'index' => self::INDEX,
+				'index' => self::INDEX.'_v1',
 				'type' => 'version',
-				'body' => [
-						'version' =>$version
-				]
+				'body' => $version['aperture']['mappings']
 		]);/**/
+		
+
+		$this->client->indices()->putAlias([
+				'name' => self::INDEX,
+				'index' => self::INDEX.'_v1'
+		]);
 		
 	}
 
 	
 	
 	private function allowAccessToES(){
-		
-
 		$this->out("Checking IP....");
 		
 		$externalContent = file_get_contents('http://checkip.dyndns.com/');
@@ -1059,8 +931,6 @@ class IndexShell extends AppShell {
 		
 		$accessPolicies = json_decode($config['DomainConfig']['AccessPolicies']['Options'], true);
 		
-// 		var_dump($accessPolicies);
-
 		foreach ($accessPolicies['Statement'] as $statement){
 			if( isset($statement['Condition']) && 
 					isset($statement['Condition']['IpAddress']) && 
@@ -1087,27 +957,29 @@ class IndexShell extends AppShell {
 		]);
 		
 		$this->out("Access policies updated");
-		
 
+		$this->out("$externalIp is now registered to AWS, It will take some times to be enabled (around 20 minutes)");
 	}
 	
 	public function main() {
 		
-		$this->allowAccessToES();
+		if(null !== Configure::read('awsESHosts')) {	
+			$this->allowAccessToES();
 		
-		$this->client = ClientBuilder::create()           // Instantiate a new ClientBuilder
-			->setHosts(Configure::read('awsESHosts'))      // Set the hosts
-			->build();              // Build the client object
-
-		//$this->client = new Client();
+			$this->client = ClientBuilder::create()           // Instantiate a new ClientBuilder
+				->setHosts(Configure::read('awsESHosts'))      // Set the hosts
+				->build();              // Build the client object
+		}
+		else {			
+			$this->client =  ClientBuilder::create()           // Instantiate a new ClientBuilder
+				->build(); 
+		}
 
 		$this->languages = Configure::read('languages');
 		$this->googleApiKey = Configure::read('googleApiKey');
 		$this->places = [];
 		$this->locations = [];
 		
-
-		Configure::write('Config.language', "fr");
 		
 		
 		while(true) {
@@ -1132,7 +1004,7 @@ class IndexShell extends AppShell {
 		//echo $endpoint;
 
 		//exit();
-
+		
 		$this->s3 = new S3Client(Configure::read('awsClientConfig'));
 
 		
