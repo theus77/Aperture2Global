@@ -1,6 +1,4 @@
 {
-  "aperture": {
-    "mappings": {
       "version": {
         "properties": {
           "uuid": {
@@ -31,9 +29,13 @@
           "label": {
             "type": "string"
           },
+          "originalDate": {
+            "type": "date",
+            "format": "basic_date_time_no_millis"
+          },
           "lastUpdateDate": {
             "type": "date",
-            "format": "dateOptionalTime"
+            "format": "basic_date_time_no_millis"
           },
           "lens_model": {
             "type": "string"
@@ -44,7 +46,10 @@
               "format": "compressed",
               "precision": "1m"
             },
-            "lat_lon": true
+            "lat_lon": true,
+            "geohash": true,
+            "geohash_prefix": true,
+            "geohash_precision": 12
           },
           "master_location": {
             "type": "string"
@@ -153,7 +158,10 @@
                   "format": "compressed",
                   "precision": "1m"
                 },
-                "lat_lon": true
+                "lat_lon": true,
+	            "geohash": true,
+	            "geohash_prefix": true,
+	            "geohash_precision": 12
               },
               "level": {
                 "type": "integer"
@@ -194,6 +202,4 @@
           }
         }
       }
-    }
-  }
 }

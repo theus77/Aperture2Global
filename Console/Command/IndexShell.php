@@ -445,7 +445,8 @@ class IndexShell extends AppShell {
 			$data['width'] = $version['Version']['masterWidth'];
 			$data['height'] = $version['Version']['masterHeight'];
 			$data['rating'] = $version['Version']['mainRating'];
-			$data['lastUpdateDate'] = date('Y-m-d\TH:i:s');
+			$data['originalDate'] = date('Ymd\THisZ', $version['Version']['unixImageDate']);
+			$data['lastUpdateDate'] = date('Ymd\THisZ');
 			//yyyy-MM-dd’T'HH:mm:ss.SSSZZ
 			
 			if(!is_null($version['Version']['exifLatitude']) && !is_null($version['Version']['exifLongitude'])){
@@ -899,7 +900,7 @@ class IndexShell extends AppShell {
 		$this->client->indices()->putMapping([
 				'index' => self::INDEX.'_v1',
 				'type' => 'version',
-				'body' => $version['aperture']['mappings']
+				'body' => $version
 		]);/**/
 		
 
