@@ -646,7 +646,7 @@ class IndexShell extends AppShell {
 					}
 					
 					//Hot fix for brabant wallon
-					if(strcmp($temp['uuid'], "IEX+fax_T+Ox3UpLaN8aoA") == 0) {
+					if(strcmp($temp['uuid'], "IEX-fax_T-Ox3UpLaN8aoA") == 0) {
 						$temp['name_fr'] = 'Province du Brabant wallon';
 						$temp['name_nl'] = 'Beleef Waals-Brabant';
 					}
