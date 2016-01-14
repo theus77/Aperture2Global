@@ -17,9 +17,6 @@
           "copyright_notice": {
             "type": "string"
           },
-          "date": {
-            "type": "date"
-          },
           "email": {
             "type": "string"
           },
@@ -29,13 +26,13 @@
           "label": {
             "type": "string"
           },
-          "originalDate": {
+          "date": {
             "type": "date",
-            "format": "basic_date_time_no_millis"
+            "format" : "yyyy/MM/dd HH:mm:ss"
           },
           "lastUpdateDate": {
             "type": "date",
-            "format": "basic_date_time_no_millis"
+            "format" : "yyyy/MM/dd HH:mm:ss"
           },
           "lens_model": {
             "type": "string"

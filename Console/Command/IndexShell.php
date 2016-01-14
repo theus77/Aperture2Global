@@ -17,6 +17,7 @@ class IndexShell extends AppShell {
 	const INDEX = 'aperture';
 	const ZIP = 15;
 	const CITY = 16;
+	const COUNTRY = 1;
 
 	private $properties = [
 			//'Byline',
@@ -57,7 +58,8 @@ class IndexShell extends AppShell {
 						'Version.showInLibrary' => 1,
 						'Version.isHidden' => 0,
 						'Version.isInTrash' => 0,
-						'Version.mainRating >=' => 0
+						'Version.mainRating >=' => 0,
+// 						'Version.uuid' => 'XccAqOzDQSmT7dEWaXK7Dw'
 				),
 				'contain' => array(
 						'PlaceForVersion' => array(
@@ -205,60 +207,109 @@ class IndexShell extends AppShell {
 	}
 
 	
+	private function getAnotherImageInTheSameLocality($countryUuid, $zipCode) {
+		$data = '
+				{
+				   "size": 1,
+				   "query": {
+				      "bool": {
+				         "must": [
+				            {
+				               "nested": {
+				                  "path": "locations",
+				                  "query": {
+				                     "term": {
+				                        "locations.uuid": {
+				                           "value": '.json_encode($countryUuid).'
+				                        }
+				                     }
+				                  }
+				               }
+				            },
+				            {
+				               "nested": {
+				                  "path": "locations",
+				                  "query": {
+				                     "term": {
+				                        "locations.name": {
+				                           "value": '.json_encode($zipCode).'
+				                        }
+				                     }
+				                  }
+				               }
+				            }
+				         ]
+				      }
+				   }
+				}
+				
+				';
+		
+// 		$this->out($data);
+		
+		$params = [
+			'index' => self::INDEX,
+			'type' => 'version',
+			'body' => $data
+		];
+		$ret = $this->client->search($params);
+// 		var_dump($ret);
+		return ($ret["hits"]["total"]>0)?$ret["hits"]["hits"][0]["_source"]:false;
+	}
+	
 	
 	private function getZipCode($lat, $lng, &$locations) {
 		if( ! isset($this->zipCodes) ) {
 			$this->zipCodes = [];
 		}
 		
-		if(!isset($locations[self::CITY])){
-			return;
-		}
-		
-		if(isset($this->zipCodes[$locations[self::CITY]['modelId']])){
+		if(isset($locations[self::CITY]) && isset($this->zipCodes[$locations[self::CITY]['modelId']])){
 			$locations[self::ZIP] = $this->zipCodes[$locations[self::CITY]['modelId']];
 			return;
 		}
+		
 		
 		$localities = $this->getLocalityGoogle($lat, $lng, "en");
 		
 		
 		foreach ($localities as $locality) {
 			if( strcmp($locality['types'][0], 'postal_code') == 0 ) {
-				$temp['level'] = self::ZIP;
-
-				$temp['southwest'] = $locations[self::CITY]['southwest'];
-				$temp['northeast'] = $locations[self::CITY]['northeast'];
-				$temp['location'] = $locations[self::CITY]['location'];
-				$temp['uuid'] = $locations[self::CITY]['uuid'];
-				$temp['name'] = $locality['address_components'][0]['long_name'];
-				foreach ($this->languages as $language){
-					$temp['name_'.$language] = $temp['name'];
+				$temp = [];
+				
+				if(!isset($locations[self::CITY])){
+					
+					$version = $this->getAnotherImageInTheSameLocality($locations[self::COUNTRY]['uuid'], $locality['address_components'][0]['long_name']);
+					if($version) {
+// 						var_dump($version);
+						foreach ($version['locations'] as $local){
+							if($local['level'] == self::CITY){
+// 								$this->out("city found");
+								$locations[self::CITY] = $local;
+							}
+							if($local['level'] == self::ZIP){
+								$locations[self::ZIP] = $local;
+// 								$this->out("zip found");
+							}
+						}
+					}
 				}
-				$locations[self::ZIP] = $temp;
-				$this->zipCodes[$locations[self::CITY]['modelId']] = $temp;
+				else{
+					$temp['level'] = self::ZIP;
+					$temp['southwest'] = $locations[self::CITY]['southwest'];
+					$temp['northeast'] = $locations[self::CITY]['northeast'];
+					$temp['location'] = $locations[self::CITY]['location'];
+					$temp['uuid'] = $locations[self::CITY]['uuid'];
+					$temp['name'] = $locality['address_components'][0]['long_name'];
+					foreach ($this->languages as $language){
+						$temp['name_'.$language] = $temp['name'];
+					}
+					$locations[self::ZIP] = $temp;
+					$this->zipCodes[$locations[self::CITY]['modelId']] = $temp;					
+				}				
 				
 				break;
 			}
 		}
-		
-		
-// 		var_dump($locations);
-		
-// 		exit;
-		
-// 		if($locations[self::CITY]){
-		
-// 		$locations[$type]['modelId'];
-		
-
-		/*$localities = $this->getLocality($lat, $lng, $language);
-		
-		if($localities){
-			foreach ($localities as $locality) {
-				
-			}
-		}/**/
 	}
 	
 	private function addGoogleLocationsInformations($lat, $lng, &$locations) {
@@ -441,12 +492,11 @@ class IndexShell extends AppShell {
 			$this->out($version['Version']['name'].': '.$version['Version']['modelId']);
 			$data['uuid'] = $version['Version']['encodedUuid'];
 			$data['name'] = $version['Version']['name'];
-			$data['date'] = $version['Version']['unixImageDate'];
 			$data['width'] = $version['Version']['masterWidth'];
 			$data['height'] = $version['Version']['masterHeight'];
 			$data['rating'] = $version['Version']['mainRating'];
-			$data['originalDate'] = date('Ymd\THisZ', $version['Version']['unixImageDate']);
-			$data['lastUpdateDate'] = date('Ymd\THisZ');
+			$data['date'] = date('Y/m/d H:i:s', $version['Version']['unixImageDate']);
+			$data['lastUpdateDate'] = date('Y/m/d H:i:s');
 			//yyyy-MM-dd’T'HH:mm:ss.SSSZZ
 			
 			if(!is_null($version['Version']['exifLatitude']) && !is_null($version['Version']['exifLongitude'])){
@@ -593,6 +643,12 @@ class IndexShell extends AppShell {
 							$temp['name_'.$language] = $temp['name'];
 						}
 						
+					}
+					
+					//Hot fix for brabant wallon
+					if(strcmp($temp['uuid'], "IEX+fax_T+Ox3UpLaN8aoA") == 0) {
+						$temp['name_fr'] = 'Province du Brabant wallon';
+						$temp['name_nl'] = 'Beleef Waals-Brabant';
 					}
 					
 					$locations[$temp['level']] = $temp;
