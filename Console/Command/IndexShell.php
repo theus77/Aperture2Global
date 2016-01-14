@@ -100,7 +100,7 @@ class IndexShell extends AppShell {
 // 		return true;
 		$imageProxy = $this->ImageProxyState->findByVersionuuid($uuid);
 
-		$filePath = APP."Thumbnails".DS.$imageProxy['ImageProxyState']['thumbnailPath'];
+		$filePath = APP."../Thumbnails".DS.$imageProxy['ImageProxyState']['thumbnailPath'];
 
 		if($imageProxy && file_exists($filePath)){
 
