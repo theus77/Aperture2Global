@@ -1,5 +1,9 @@
 {
       "version": {
+      	"_all": {
+      	  "store": true,
+      	  "enabled" : true
+        },
         "properties": {
           "uuid": {
             "type": "string",
