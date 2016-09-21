@@ -970,6 +970,7 @@ class IndexShell extends AppShell {
 	
 	
 	private function allowAccessToES(){
+		return true;
 		$this->out("Checking IP....");
 		
 		$externalContent = file_get_contents('http://checkip.dyndns.com/');
