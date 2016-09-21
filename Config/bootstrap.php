@@ -111,7 +111,7 @@ CakeLog::config('error', array(
 CakePlugin::load('ApertureConnector', array('bootstrap' => false, 'routes' => true));
 
 
-Configure::write('awsESHosts', ['https://search-aperture-es-aiqcbttcloqndmfiagwvbu5nfu.eu-central-1.es.amazonaws.com:443/']);
+Configure::write('awsESHosts', ['http://localhost:9200']);
 
 Configure::write('awsESDomainName', 'aperture-es');
 /*****/
