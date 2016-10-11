@@ -198,6 +198,10 @@ class IndexShell extends AppShell {
 			}
 			return ['Locality' => $out];
 			*/
+			if(!isset($resp['results'])){
+				var_dump($resp);
+				return false;
+			}
 			return $resp['results'];
 
 		}else{
