@@ -281,20 +281,35 @@ class IndexShell extends AppShell {
 				$temp = [];
 				
 				if(!isset($locations[self::CITY])){
-					
-					$version = $this->getAnotherImageInTheSameLocality($locations[self::COUNTRY]['uuid'], $locality['address_components'][0]['long_name']);
-					if($version) {
-// 						var_dump($version);
-						foreach ($version['locations'] as $local){
-							if($local['level'] == self::CITY){
-// 								$this->out("city found");
-								$locations[self::CITY] = $local;
-							}
-							if($local['level'] == self::ZIP){
-								$locations[self::ZIP] = $local;
-// 								$this->out("zip found");
+					try {
+						$version = $this->getAnotherImageInTheSameLocality($locations[self::COUNTRY]['uuid'], $locality['address_components'][0]['long_name']);
+						if($version) {
+	// 						var_dump($version);
+							foreach ($version['locations'] as $local){
+								if($local['level'] == self::CITY){
+	// 								$this->out("city found");
+									$locations[self::CITY] = $local;
+								}
+								if($local['level'] == self::ZIP){
+									$locations[self::ZIP] = $local;
+	// 								$this->out("zip found");
+								}
 							}
 						}
+					}
+					catch(\Exception $e){
+
+						$temp['level'] = self::ZIP;
+						$temp['southwest'] = $locations[self::CITY]['southwest'];
+						$temp['northeast'] = $locations[self::CITY]['northeast'];
+						$temp['location'] = $locations[self::CITY]['location'];
+						$temp['uuid'] = $locations[self::CITY]['uuid'];
+						$temp['name'] = $locality['address_components'][0]['long_name'];
+						foreach ($this->languages as $language){
+							$temp['name_'.$language] = $temp['name'];
+						}
+						$locations[self::ZIP] = $temp;
+						$this->zipCodes[$locations[self::CITY]['modelId']] = $temp;
 					}
 				}
 				else{
